@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7kw6d5ox18mt"]
+[gd_scene load_steps=3 format=3 uid="uid://c7kw6d5ox18mt"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
+[ext_resource type="Script" path="res://Scripts/Class/Animated_Button.gd" id="2_87au6"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -11,36 +12,67 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ccyi8")
 Schools_generation = Array[int]([0, 1, 0, 2])
+metadata/_edit_lock_ = true
 
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
+[node name="Gui" type="CanvasLayer" parent="."]
+
+[node name="Background" type="ColorRect" parent="Gui"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.419608, 0.592157, 0.898039, 1)
 
-[node name="Panel" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.124566
-anchor_top = 0.0601852
-anchor_right = 0.875434
-anchor_bottom = 0.939815
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="Schools" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.215278
-anchor_top = 0.283951
-anchor_right = 0.847222
-anchor_bottom = 0.743827
+[node name="Panel" type="Control" parent="Gui"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-alignment = 2
+
+[node name="Tittle_text" type="Label" parent="Gui/Panel"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 544.0
+offset_right = 56.0
+offset_bottom = 567.0
+scale = Vector2(3.73553, 3.73553)
+text = "Tittle"
+
+[node name="Pass_button" type="Button" parent="Gui/Panel"]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 568.0
+offset_right = 1128.0
+offset_bottom = 632.0
+mouse_default_cursor_shape = 2
+text = "Pass"
+script = ExtResource("2_87au6")
+
+[node name="Schools_gui" type="CanvasLayer" parent="."]
+
+[node name="School_panel" type="Control" parent="Schools_gui"]
+layout_mode = 3
+anchor_top = 0.246914
+anchor_right = 1.0
+anchor_bottom = 0.641975
+offset_bottom = 3.05176e-05
 metadata/_edit_use_anchors_ = true
+
+[node name="Schools" type="HBoxContainer" parent="Schools_gui/School_panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.384549
+anchor_right = 1.38455
+anchor_bottom = 1.09375
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 115
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Gui/Panel/Pass_button" to="." method="_on_pass_button_pressed"]

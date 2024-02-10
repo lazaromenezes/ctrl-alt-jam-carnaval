@@ -1,8 +1,8 @@
-extends Control
+extends BaseButton
 
-class_name Animated_Control
+class_name Animated_Button
 
-@export_category("Animated Control")
+@export_category("Animated Button")
 @export var speed: float = 0.2
 @export var enter_scale: float = 1.2
 @export var exit_scale: float = 1
