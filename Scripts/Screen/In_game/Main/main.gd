@@ -5,7 +5,6 @@ signal puzzle_completed()
 
 enum SCHOOLS {FIRST,SECOND,THIRD}
 
-
 @export var Schools_generation: Array[SCHOOLS] = []
 @export var available_puzzles: Array[PackedScene] = []
 
@@ -14,10 +13,11 @@ enum SCHOOLS {FIRST,SECOND,THIRD}
 @onready var school_panel = $Schools_gui/School_panel
 @onready var puzzle_area = $PuzzleContainer/PuzzleArea/PanelContainer/Container
 
-
 var new_firt_school: PackedScene = preload("res://Scene/Screen/In_game/Schools/school_first.tscn")
 var new_second_school: PackedScene = preload("res://Scene/Screen/In_game/Schools/school_second.tscn")
 var new_third_school: PackedScene = preload("res://Scene/Screen/In_game/Schools/school_third.tscn")
+
+var next_school: int = 0
 
 func _ready() -> void:
 	_generate_schools()
@@ -39,7 +39,7 @@ func _generate_schools() -> void:
 		school.disabled = true
 		schools_node.add_child(school)
 	
-	call_deferred("pass_schools",0)
+	call_deferred("pass_schools")
 
 func enabled_school(school: Control) -> void:
 	school.disabled = false
@@ -47,29 +47,38 @@ func enabled_school(school: Control) -> void:
 
 func selection_school(school: Control) -> void:
 	tittle_text.text = school.tittle
+	await create_tween()\
+	.tween_property($PuzzleContainer, "visible", true, 0.3)\
+	.set_ease(Tween.EASE_IN)\
+	.finished
 	
 	var puzzle: Puzzle = available_puzzles.pick_random().instantiate()
 	puzzle.solved.connect(_on_puzzle_solved)
 	puzzle_area.add_child(puzzle)
 
-func pass_schools(index: int) -> void:
-	var school: Control = schools_node.get_child(index)
+func pass_schools() -> void:
+	var school: Control = schools_node.get_child(next_school)
 	var tw = create_tween()
 	
 	enabled_school(school)
 	selection_school(school)
 	
 	tw.tween_property(school_panel,"position:x",-school.position.x+200,0.3).set_trans(Tween.TRANS_CUBIC)
+	next_school += 1
+	
+	if schools_node.get_child_count() <= next_school:
+		next_school = 0
 
 func _on_puzzle_solved():
-	call_deferred("queue_free", puzzle_area.get_child(0))
+	await create_tween()\
+	.tween_property($PuzzleContainer, "visible", false, 0.3)\
+	.set_ease(Tween.EASE_IN)\
+	.finished
+	
+	puzzle_area.get_child(0).call_deferred("queue_free")
+	pass_schools()
 
 #Debug================================
-var prox = 1
 func _on_pass_button_pressed():
-	pass_schools(prox)
-	prox += 1
-	
-	if schools_node.get_child_count() <= prox:
-		prox = 0
+	pass_schools()	
 #endregion
