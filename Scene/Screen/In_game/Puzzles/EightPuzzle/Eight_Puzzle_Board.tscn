@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://064vjbvjj6pr"]
+
+[ext_resource type="Script" path="res://Scripts/Screen/In_game/Puzzles/EightPuzzle/EightPuzzleBoard.gd" id="1_em7d2"]
+[ext_resource type="Resource" uid="uid://emsobtikyp6d" path="res://Resources/Puzzles/EightPuzzle/numbers.tres" id="2_wfq4m"]
+
+[node name="EightPuzzleBoard" type="Node2D"]
+script = ExtResource("1_em7d2")
+available_puzzles = Array[Resource("res://Scripts/Resource/Puzzles/EightPuzzle/Eight_Puzzle.gd")]([ExtResource("2_wfq4m")])

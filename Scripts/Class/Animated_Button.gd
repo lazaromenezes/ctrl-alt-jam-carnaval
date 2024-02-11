@@ -18,14 +18,11 @@ func _ready() -> void:
 	save_scale_ready = scale
 	pivot_offset = custom_minimum_size/2
 
-
-
 func _mouse_enter() -> void:
 	var Tw = create_tween()
 	Tw.tween_property(self,"scale",save_scale_ready*enter_scale,speed).set_trans(Tween.TRANS_CUBIC)
 	
 	z_index = 1
-
 
 func _mouse_exit() -> void:
 	var Tw = create_tween()
