@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
 [ext_resource type="Script" path="res://Scripts/Class/Animated_Button.gd" id="2_87au6"]
-[ext_resource type="PackedScene" uid="uid://064vjbvjj6pr" path="res://Scene/Screen/In_game/Puzzles/EightPuzzle/Eight_Puzzle_Board.tscn" id="2_m0yxm"]
+[ext_resource type="PackedScene" uid="uid://chtrdqbf61mhs" path="res://Scene/Screen/In_game/Puzzles/DebugPuzzle/DebugPuzzle.tscn" id="2_kojua"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ccyi8")
 Schools_generation = Array[int]([0, 1, 0, 2])
-available_puzzles = Array[PackedScene]([ExtResource("2_m0yxm")])
+available_puzzles = Array[PackedScene]([ExtResource("2_kojua")])
 metadata/_edit_lock_ = true
 
 [node name="Gui" type="CanvasLayer" parent="."]
@@ -79,6 +79,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PuzzleContainer" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="PuzzleArea" type="Control" parent="PuzzleContainer"]
 layout_mode = 3
