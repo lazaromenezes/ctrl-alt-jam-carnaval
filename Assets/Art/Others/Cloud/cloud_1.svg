@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="83.305313mm"
+   height="55.271957mm"
+   viewBox="0 0 83.305313 55.271957"
+   version="1.1"
+   id="svg1259"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   sodipodi:docname="Others.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1261"
+     pagecolor="#175f4d"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.34611404"
+     inkscape:cx="492.61221"
+     inkscape:cy="78.008971"
+     inkscape:window-width="1360"
+     inkscape:window-height="699"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true" />
+  <defs
+     id="defs1256" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-98.081744,-222.52418)">
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.04996;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:0, 22.5495;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="circle3341"
+       cx="55.436684"
+       cy="274.33157"
+       r="19.163013"
+       transform="rotate(-13.341713)" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.63271;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:0, 28.9597;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="circle3343"
+       cx="79.674553"
+       cy="273.01672"
+       r="24.738588"
+       transform="rotate(-13.341713)" />
+    <circle
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.04996;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:0, 22.5495;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       id="circle3345"
+       cx="98.164085"
+       cy="289.08743"
+       r="19.163013"
+       transform="rotate(-13.341713)" />
+  </g>
+</svg>
