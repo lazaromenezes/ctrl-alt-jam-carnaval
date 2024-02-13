@@ -1,0 +1,10 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dxydbltu0sb8j"]
+
+[ext_resource type="FontFile" uid="uid://cima768p1e6c5" path="res://Assets/Fontes/Import/Heyhoo.ttf" id="1_ejvbx"]
+
+[resource]
+base_font = ExtResource("1_ejvbx")
+variation_transform = Transform2D(4, 0, 0, 4, 0, 0)
+spacing_glyph = 18
+spacing_top = 30
+spacing_bottom = -100
