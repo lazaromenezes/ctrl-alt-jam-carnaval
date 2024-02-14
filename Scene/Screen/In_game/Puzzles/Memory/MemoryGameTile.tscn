@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjm5axj6pol8l"]
+
+[ext_resource type="Texture2D" uid="uid://pnrl23rlrxue" path="res://Assets/Puzzles/Memory/backfacevg.svg" id="1_uwsnl"]
+[ext_resource type="Script" path="res://Scripts/Screen/In_game/Puzzles/Memory/MemoryGameTile.gd" id="1_v0f7b"]
+[ext_resource type="Texture2D" uid="uid://basrm7j421jkq" path="res://Assets/Puzzles/Memory/numbers_tileset.svg" id="2_0y3xe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sn6r"]
+atlas = ExtResource("2_0y3xe")
+region = Rect2(25, 25, 128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t02mh"]
+size = Vector2(128, 128)
+
+[node name="MemoryGameTile" type="Area2D"]
+script = ExtResource("1_v0f7b")
+
+[node name="BackFace" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_uwsnl")
+
+[node name="FrontFace" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_3sn6r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t02mh")
+
+[node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

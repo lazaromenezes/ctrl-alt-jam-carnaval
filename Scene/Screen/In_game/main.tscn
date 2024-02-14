@@ -1,11 +1,13 @@
-[gd_scene load_steps=40 format=3 uid="uid://c7kw6d5ox18mt"]
+[gd_scene load_steps=42 format=3 uid="uid://c7kw6d5ox18mt"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
 [ext_resource type="Script" path="res://Scripts/Class/Animated_Button.gd" id="2_87au6"]
-[ext_resource type="PackedScene" uid="uid://064vjbvjj6pr" path="res://Scene/Screen/In_game/Puzzles/EightPuzzle/Eight_Puzzle_Board.tscn" id="2_mckw3"]
+[ext_resource type="PackedScene" uid="uid://chtrdqbf61mhs" path="res://Scene/Screen/In_game/Puzzles/DebugPuzzle/DebugPuzzle.tscn" id="2_kojua"]
 [ext_resource type="Texture2D" uid="uid://4trngi1yarw3" path="res://Assets/Art/Others/Ball.svg" id="3_8sghc"]
+[ext_resource type="PackedScene" uid="uid://x1no43ysnx7" path="res://Scene/Screen/In_game/Puzzles/Memory/MemoryBoard.tscn" id="3_ayrn1"]
 [ext_resource type="Texture2D" uid="uid://c2d8uu3cdpal8" path="res://Assets/Art/Persons/Background/back_1.svg" id="3_qunak"]
 [ext_resource type="Texture2D" uid="uid://cuyoxk6l6p6wg" path="res://Assets/Art/Persons/Background/back_0.svg" id="4_6x810"]
+[ext_resource type="PackedScene" uid="uid://064vjbvjj6pr" path="res://Scene/Screen/In_game/Puzzles/EightPuzzle/Eight_Puzzle_Board.tscn" id="4_sbsmc"]
 [ext_resource type="Texture2D" uid="uid://hdm5si347v4f" path="res://Assets/Art/Others/Border.svg" id="4_swb3a"]
 [ext_resource type="Texture2D" uid="uid://y1v46k436mys" path="res://Assets/Art/Others/Cloud/cloud_0.svg" id="5_1r6tx"]
 [ext_resource type="Texture2D" uid="uid://dosbvfn7m2efv" path="res://Assets/Art/Persons/Background/back_2.svg" id="5_87fgb"]
@@ -16,6 +18,21 @@
 [ext_resource type="FontVariation" uid="uid://dxydbltu0sb8j" path="res://Assets/Fontes/Create/main.tres" id="13_2dme5"]
 
 [sub_resource type="Theme" id="Theme_8efqr"]
+
+[sub_resource type="Animation" id="Animation_csnvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("border:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_6duxv"]
 resource_name = "rotation"
@@ -31,21 +48,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -6.28319]
-}
-
-[sub_resource type="Animation" id="Animation_csnvo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("border:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3lomr"]
@@ -519,7 +521,7 @@ grow_vertical = 2
 theme = SubResource("Theme_8efqr")
 script = ExtResource("1_ccyi8")
 Schools_generation = Array[int]([0, 1, 0, 2])
-available_puzzles = Array[PackedScene]([ExtResource("2_mckw3")])
+available_puzzles = Array[PackedScene]([ExtResource("2_kojua"), ExtResource("3_ayrn1"), ExtResource("4_sbsmc")])
 metadata/_edit_lock_ = true
 
 [node name="Gui" type="CanvasLayer" parent="."]

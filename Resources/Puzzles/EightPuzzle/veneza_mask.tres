@@ -20,7 +20,7 @@ region = Rect2(128, 0, 128, 128)
 [sub_resource type="Resource" id="Resource_krajj"]
 script = ExtResource("2_cdwe7")
 texture = SubResource("AtlasTexture_yihme")
-correct_position = 0
+correct_position = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdjq4"]
 atlas = ExtResource("3_qp0xl")
@@ -29,7 +29,7 @@ region = Rect2(256, 0, 128, 128)
 [sub_resource type="Resource" id="Resource_ji0mg"]
 script = ExtResource("2_cdwe7")
 texture = SubResource("AtlasTexture_tdjq4")
-correct_position = 0
+correct_position = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wkwcc"]
 atlas = ExtResource("3_qp0xl")
@@ -38,7 +38,7 @@ region = Rect2(0, 128, 128, 128)
 [sub_resource type="Resource" id="Resource_8dnrn"]
 script = ExtResource("2_cdwe7")
 texture = SubResource("AtlasTexture_wkwcc")
-correct_position = 0
+correct_position = 3
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5aej"]
 atlas = ExtResource("3_qp0xl")
@@ -47,7 +47,7 @@ region = Rect2(128, 128, 128, 128)
 [sub_resource type="Resource" id="Resource_rc0vs"]
 script = ExtResource("2_cdwe7")
 texture = SubResource("AtlasTexture_s5aej")
-correct_position = 0
+correct_position = 4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3dp5v"]
 atlas = ExtResource("3_qp0xl")
@@ -56,7 +56,7 @@ region = Rect2(256, 128, 128, 128)
 [sub_resource type="Resource" id="Resource_xi320"]
 script = ExtResource("2_cdwe7")
 texture = SubResource("AtlasTexture_3dp5v")
-correct_position = 0
+correct_position = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xav8"]
 atlas = ExtResource("3_qp0xl")
@@ -65,7 +65,7 @@ region = Rect2(0, 256, 128, 128)
 [sub_resource type="Resource" id="Resource_vd4j2"]
 script = ExtResource("2_cdwe7")
 texture = SubResource("AtlasTexture_4xav8")
-correct_position = 0
+correct_position = 6
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yrm5u"]
 atlas = ExtResource("3_qp0xl")
@@ -74,7 +74,7 @@ region = Rect2(128, 256, 128, 128)
 [sub_resource type="Resource" id="Resource_webh6"]
 script = ExtResource("2_cdwe7")
 texture = SubResource("AtlasTexture_yrm5u")
-correct_position = 0
+correct_position = 7
 
 [resource]
 script = ExtResource("1_iaykv")
