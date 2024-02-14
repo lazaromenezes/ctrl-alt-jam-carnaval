@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="Memory" load_steps=21 format=3 uid="uid://dfy3dvxxmxul8"]
+
+[ext_resource type="Texture2D" uid="uid://b3kemi6hved6x" path="res://Assets/Art/Puzzles/Flags/All_Flags.svg" id="1_cf5k4"]
+[ext_resource type="Script" path="res://Scripts/Resource/Puzzles/Memory/Memory.gd" id="2_7vgg8"]
+[ext_resource type="Script" path="res://Scripts/Resource/Puzzles/Memory/Memory_Tile_Data.gd" id="3_hck67"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwhnt"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(4, 933, 332, 220)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytib4"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(4, 3, 332, 219)
+
+[sub_resource type="Resource" id="Resource_i0ptk"]
+script = ExtResource("3_hck67")
+texture = SubResource("AtlasTexture_ytib4")
+value = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7rum"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(350, 3, 332, 219)
+
+[sub_resource type="Resource" id="Resource_ambf5"]
+script = ExtResource("3_hck67")
+texture = SubResource("AtlasTexture_x7rum")
+value = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31804"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(4, 231, 332, 220)
+
+[sub_resource type="Resource" id="Resource_j7upa"]
+script = ExtResource("3_hck67")
+texture = SubResource("AtlasTexture_31804")
+value = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hawmx"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(350, 229, 332, 220)
+
+[sub_resource type="Resource" id="Resource_ieydr"]
+script = ExtResource("3_hck67")
+texture = SubResource("AtlasTexture_hawmx")
+value = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbmq3"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(5, 454, 332, 220)
+
+[sub_resource type="Resource" id="Resource_vt2yy"]
+script = ExtResource("3_hck67")
+texture = SubResource("AtlasTexture_xbmq3")
+value = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esjoc"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(351, 456, 332, 219)
+
+[sub_resource type="Resource" id="Resource_lplrk"]
+script = ExtResource("3_hck67")
+texture = SubResource("AtlasTexture_esjoc")
+value = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcgd3"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(5, 690, 332, 219)
+
+[sub_resource type="Resource" id="Resource_o6w0d"]
+script = ExtResource("3_hck67")
+texture = SubResource("AtlasTexture_vcgd3")
+value = 7
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y4xt"]
+atlas = ExtResource("1_cf5k4")
+region = Rect2(351, 690, 332, 219)
+
+[sub_resource type="Resource" id="Resource_h8434"]
+script = ExtResource("3_hck67")
+texture = SubResource("AtlasTexture_2y4xt")
+value = 8
+
+[resource]
+script = ExtResource("2_7vgg8")
+tiles = Array[ExtResource("3_hck67")]([SubResource("Resource_i0ptk"), SubResource("Resource_ambf5"), SubResource("Resource_j7upa"), SubResource("Resource_ieydr"), SubResource("Resource_vt2yy"), SubResource("Resource_lplrk"), SubResource("Resource_o6w0d"), SubResource("Resource_h8434")])
+back_tile = SubResource("AtlasTexture_vwhnt")
+tile_size = Vector2(332, 220)

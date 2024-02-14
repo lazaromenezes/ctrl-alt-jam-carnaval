@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Resource/Puzzles/EightPuzzle/Eight_Puzzle.gd" id="1_ftht5"]
 [ext_resource type="Script" path="res://Scripts/Resource/Puzzles/EightPuzzle/Eight_Puzzle_Tile_Data.gd" id="2_5f4rs"]
-[ext_resource type="Texture2D" uid="uid://c8rw430egia82" path="res://Assets/Art/Puzzles/tropical.svg" id="3_2w0la"]
+[ext_resource type="Texture2D" uid="uid://c8rw430egia82" path="res://Assets/Art/Puzzles/EightPuzzle/tropical.svg" id="3_2w0la"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e5s2t"]
 atlas = ExtResource("3_2w0la")
