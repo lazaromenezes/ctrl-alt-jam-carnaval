@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://064vjbvjj6pr"]
+[gd_scene load_steps=5 format=3 uid="uid://064vjbvjj6pr"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Puzzles/EightPuzzle/EightPuzzleBoard.gd" id="1_em7d2"]
 [ext_resource type="Resource" uid="uid://d048r0wlptove" path="res://Resources/Puzzles/EightPuzzle/veneza_mask.tres" id="2_g0lfd"]
+[ext_resource type="Resource" uid="uid://dkf3mn0t81guw" path="res://Resources/Puzzles/EightPuzzle/coringa.tres" id="4_vtlcv"]
 [ext_resource type="Resource" uid="uid://c6ril8qryjun7" path="res://Resources/Puzzles/EightPuzzle/tropical_mask.tres" id="5_bd4bm"]
 
 [node name="EightPuzzleBoard" type="Node2D"]
 script = ExtResource("1_em7d2")
-available_puzzles = Array[Resource("res://Scripts/Resource/Puzzles/EightPuzzle/Eight_Puzzle.gd")]([ExtResource("5_bd4bm"), ExtResource("2_g0lfd")])
+available_puzzles = Array[Resource("res://Scripts/Resource/Puzzles/EightPuzzle/Eight_Puzzle.gd")]([ExtResource("5_bd4bm"), ExtResource("2_g0lfd"), ExtResource("4_vtlcv")])

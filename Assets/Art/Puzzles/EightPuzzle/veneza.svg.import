@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8rw430egia82"
-path="res://.godot/imported/tropical.svg-2f9660e6bba40a3c007e9ef2d1a34669.ctex"
+uid="uid://bp4dmq3oxf4cu"
+path="res://.godot/imported/veneza.svg-4416b392c7df28a694bd1449e6295e6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Puzzles/tropical.svg"
-dest_files=["res://.godot/imported/tropical.svg-2f9660e6bba40a3c007e9ef2d1a34669.ctex"]
+source_file="res://Assets/Art/Puzzles/EightPuzzle/veneza.svg"
+dest_files=["res://.godot/imported/veneza.svg-4416b392c7df28a694bd1449e6295e6e.ctex"]
 
 [params]
 

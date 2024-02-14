@@ -1,0 +1,81 @@
+[gd_resource type="Resource" script_class="EightPuzzle" load_steps=20 format=3 uid="uid://dkf3mn0t81guw"]
+
+[ext_resource type="Script" path="res://Scripts/Resource/Puzzles/EightPuzzle/Eight_Puzzle.gd" id="1_l2x00"]
+[ext_resource type="Script" path="res://Scripts/Resource/Puzzles/EightPuzzle/Eight_Puzzle_Tile_Data.gd" id="2_umbs3"]
+[ext_resource type="Texture2D" uid="uid://cwp6lbodii8wc" path="res://Assets/Art/Puzzles/EightPuzzle/coringa.svg" id="3_wwbwo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_akxnt"]
+atlas = ExtResource("3_wwbwo")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="Resource" id="Resource_ma0vn"]
+script = ExtResource("2_umbs3")
+texture = SubResource("AtlasTexture_akxnt")
+correct_position = 0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iqus"]
+atlas = ExtResource("3_wwbwo")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="Resource" id="Resource_2ji7u"]
+script = ExtResource("2_umbs3")
+texture = SubResource("AtlasTexture_1iqus")
+correct_position = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjaph"]
+atlas = ExtResource("3_wwbwo")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="Resource" id="Resource_stsls"]
+script = ExtResource("2_umbs3")
+texture = SubResource("AtlasTexture_vjaph")
+correct_position = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jbb0"]
+atlas = ExtResource("3_wwbwo")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="Resource" id="Resource_2036f"]
+script = ExtResource("2_umbs3")
+texture = SubResource("AtlasTexture_1jbb0")
+correct_position = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72m3k"]
+atlas = ExtResource("3_wwbwo")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="Resource" id="Resource_1leux"]
+script = ExtResource("2_umbs3")
+texture = SubResource("AtlasTexture_72m3k")
+correct_position = 4
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7h85"]
+atlas = ExtResource("3_wwbwo")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="Resource" id="Resource_mh4ca"]
+script = ExtResource("2_umbs3")
+texture = SubResource("AtlasTexture_e7h85")
+correct_position = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uakkh"]
+atlas = ExtResource("3_wwbwo")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="Resource" id="Resource_e2fax"]
+script = ExtResource("2_umbs3")
+texture = SubResource("AtlasTexture_uakkh")
+correct_position = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u68u4"]
+atlas = ExtResource("3_wwbwo")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="Resource" id="Resource_4l5wf"]
+script = ExtResource("2_umbs3")
+texture = SubResource("AtlasTexture_u68u4")
+correct_position = 7
+
+[resource]
+script = ExtResource("1_l2x00")
+tiles = Array[ExtResource("2_umbs3")]([SubResource("Resource_ma0vn"), SubResource("Resource_2ji7u"), SubResource("Resource_stsls"), SubResource("Resource_2036f"), SubResource("Resource_1leux"), SubResource("Resource_mh4ca"), SubResource("Resource_e2fax"), SubResource("Resource_4l5wf")])

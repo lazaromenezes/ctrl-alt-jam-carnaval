@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://x1no43ysnx7"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Puzzles/Memory/MemoryBoard.gd" id="1_wsmmx"]
-[ext_resource type="Resource" uid="uid://dl5lrdgax4sj1" path="res://Resources/Puzzles/Memory/numbers.tres" id="2_p40yk"]
+[ext_resource type="Resource" uid="uid://dfy3dvxxmxul8" path="res://Resources/Puzzles/Memory/flags.tres" id="2_askt7"]
 
 [node name="Memory" type="Node2D"]
+scale = Vector2(0.64, 0.64)
 script = ExtResource("1_wsmmx")
-settings = ExtResource("2_p40yk")
+settings = ExtResource("2_askt7")

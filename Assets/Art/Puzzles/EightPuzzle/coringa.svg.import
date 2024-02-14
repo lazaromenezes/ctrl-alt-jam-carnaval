@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6o6nm5hln3yx"
-path="res://.godot/imported/All_puzzle.svg-776c85a60a3118a4a476d81116a29a4e.ctex"
+uid="uid://cwp6lbodii8wc"
+path="res://.godot/imported/coringa.svg-5fc28ad9cffa5663dda9bb44032f340f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Puzzles/All_puzzle.svg"
-dest_files=["res://.godot/imported/All_puzzle.svg-776c85a60a3118a4a476d81116a29a4e.ctex"]
+source_file="res://Assets/Art/Puzzles/EightPuzzle/coringa.svg"
+dest_files=["res://.godot/imported/coringa.svg-5fc28ad9cffa5663dda9bb44032f340f.ctex"]
 
 [params]
 
