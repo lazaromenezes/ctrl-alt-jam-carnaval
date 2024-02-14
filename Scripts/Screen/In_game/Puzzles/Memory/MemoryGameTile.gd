@@ -1,12 +1,10 @@
 extends Area2D
 class_name MemoryTile
 
-signal flipped()
+signal flipped(flipped_tile: MemoryTile)
 
 var data: MemoryTileData = null
-
-var _is_flipped: bool = true
-var matched: bool = false
+var is_flipped: bool = true
 
 func setup(tileData: MemoryTileData, game: Memory):
 	data = tileData
@@ -18,17 +16,16 @@ func setup(tileData: MemoryTileData, game: Memory):
 	$CollisionShape2D.shape = collision_shape
 
 func flip():
-	if not matched:
-		_is_flipped = not _is_flipped
-		$FrontFace.visible = _is_flipped
-		$BackFace.visible = not _is_flipped
+	is_flipped = not is_flipped
+	$FrontFace.visible = is_flipped
+	$BackFace.visible = not is_flipped
 
-		if _is_flipped:
-			flipped.emit()
+	if is_flipped:
+		flipped.emit(self)
 
 func _on_start_timer_timeout():
 	flip()
 
 func _on_input_event(_viewport, event: InputEvent, _shape_idx):
-	if event.is_action_pressed("puzzles.memory.flip") and not _is_flipped:
+	if event.is_action_pressed("puzzles.memory.flip") and not is_flipped:
 		flip()

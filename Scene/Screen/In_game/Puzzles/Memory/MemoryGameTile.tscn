@@ -25,6 +25,7 @@ texture = SubResource("AtlasTexture_3sn6r")
 shape = SubResource("RectangleShape2D_t02mh")
 
 [node name="StartTimer" type="Timer" parent="."]
+wait_time = 2.0
 one_shot = true
 autostart = true
 
