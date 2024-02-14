@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="154.65463mm"
+   height="156.07727mm"
+   viewBox="0 0 154.65463 156.07727"
+   version="1.1"
+   id="svg1259"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   sodipodi:docname="Others.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1261"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.34611404"
+     inkscape:cx="492.61221"
+     inkscape:cy="78.008971"
+     inkscape:window-width="1360"
+     inkscape:window-height="699"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true" />
+  <defs
+     id="defs1256" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(2.6051515,-86.218984)">
+    <path
+       id="path2321"
+       style="fill:#f8fef8;fill-opacity:1;stroke:none;stroke-width:2.892;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:0, 31.8119;stroke-dashoffset:0;stroke-opacity:1;paint-order:markers stroke fill"
+       d="m 53.52889,86.21899 10.702189,25.45994 16.176791,-0.45371 3.838525,-20.431315 -10.970906,12.641085 z m 55.12893,5.847189 -6.49262,16.081191 -9.119859,5.44773 9.507429,4.71961 9.37617,-10.8164 z m -91.067305,14.691611 9.899137,17.55965 3.396176,8.47183 16.022278,-15.67294 -12.843144,-2.88458 z m 116.979945,2.99723 -17.17518,10.55233 -7.8078,2.91713 13.34906,17.27646 4.78472,-14.00224 z m -130.3439874,28.62926 11.7956624,11.87421 -18.6272864,18.4211 26.1808304,-8.79223 0.742074,-16.16594 z m 147.8230174,2.86907 -26.62989,9.00204 1.06195,16.14785 22.1511,5.718 -13.04417,-10.48774 z m -126.07189,34.5581 -20.6545534,2.358 15.3143114,6.7541 -10.625192,23.94635 21.170285,-17.73587 z m 99.60116,3.51761 -11.98894,18.93735 13.16199,-0.14624 17.75189,3.48557 -13.67151,-14.81305 z m -90.416191,16.39694 -1.71514,13.05088 -5.957777,17.08113 16.59537,-11.4422 8.131287,-4.146 z m 73.078741,6.81147 -22.447722,12.05249 11.658719,6.11022 16.894063,10.42262 -5.01675,-19.52335 z m -50.018649,8.64805 -8.995834,18.74097 13.868921,-9.37048 14.618229,21.74027 -3.748608,-27.36267 z"
+       inkscape:export-filename="Others/Border.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+  </g>
+</svg>
