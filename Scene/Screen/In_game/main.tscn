@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c7kw6d5ox18mt"]
+[gd_scene load_steps=43 format=3 uid="uid://c7kw6d5ox18mt"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
 [ext_resource type="PackedScene" uid="uid://chtrdqbf61mhs" path="res://Scene/Screen/In_game/Puzzles/DebugPuzzle/DebugPuzzle.tscn" id="2_kojua"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d02hb0bi0q488" path="res://Assets/Art/Others/Pista.svg" id="7_x7n0i"]
 [ext_resource type="Texture2D" uid="uid://dwe5mo8w6mmk1" path="res://Assets/Art/Others/Cloud/cloud_2.svg" id="7_xh84r"]
 [ext_resource type="FontVariation" uid="uid://dxydbltu0sb8j" path="res://Assets/Fontes/Create/main.tres" id="13_2dme5"]
+[ext_resource type="PackedScene" uid="uid://dexm24dmhhjd1" path="res://Scene/Screen/In_game/Components/match_timer.tscn" id="16_r43yc"]
 [ext_resource type="AudioStream" uid="uid://dxnwe182uasv2" path="res://Assets/Audio/sambajam Edit 1 Export 2.ogg" id="16_ymdva"]
 
 [sub_resource type="Theme" id="Theme_8efqr"]
@@ -523,6 +524,7 @@ script = ExtResource("1_ccyi8")
 Schools_generation = Array[int]([0, 1, 0, 2])
 available_puzzles = Array[PackedScene]([ExtResource("2_kojua"), ExtResource("3_ayrn1"), ExtResource("4_sbsmc")])
 metadata/_edit_lock_ = true
+metadata/_edit_horizontal_guides_ = [552.0]
 
 [node name="Gui" type="CanvasLayer" parent="."]
 
@@ -1153,6 +1155,10 @@ offset_bottom = 597.0
 theme_override_fonts/font = ExtResource("13_2dme5")
 text = "Tittle"
 
+[node name="MatchTimer" parent="Gui/Panel" instance=ExtResource("16_r43yc")]
+layout_mode = 0
+time = 300.0
+
 [node name="Schools_gui" type="CanvasLayer" parent="."]
 
 [node name="School_panel" type="Control" parent="Schools_gui"]
@@ -1205,8 +1211,63 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 
+[node name="GameOver" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="Control" type="Control" parent="GameOver"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GameOver/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+
+[node name="Congratulations" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="Control" type="Control" parent="Congratulations"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Congratulations/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PARABÉNS!!"
+
 [node name="BackgroundSamba" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_ymdva")
 volume_db = -6.0
 autoplay = true
-mix_target = 1
+
+[connection signal="timeout" from="Gui/Panel/MatchTimer" to="." method="_on_match_timer_timeout"]
