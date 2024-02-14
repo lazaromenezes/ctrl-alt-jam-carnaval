@@ -29,7 +29,7 @@ func _ready():
 	
 	_create_tiles(current_puzzle)
 	
-	tiles.shuffle()
+	_shuffle_tiles()
 	
 	_place_tiles()
 
@@ -86,3 +86,19 @@ func _check_resolution() -> void:
 		
 	if all_correct:
 		solved.emit()
+
+func _shuffle_tiles():
+	tiles.shuffle()
+	while not _can_resolve():
+		tiles.shuffle()
+
+# https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/
+func _can_resolve() -> bool:
+	var inversions: int = 0
+	
+	for i in range(9):
+		for j in range(i + 1, 9):
+			if tiles[j] and tiles[i] and tiles[i].tile_data.correct_position > tiles[j].tile_data.correct_position:
+				inversions += 1
+	
+	return inversions % 2 == 0
