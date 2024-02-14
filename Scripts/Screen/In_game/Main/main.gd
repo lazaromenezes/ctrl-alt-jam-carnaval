@@ -78,7 +78,3 @@ func _on_puzzle_solved():
 	puzzle_area.get_child(0).call_deferred("queue_free")
 	pass_schools()
 
-#Debug================================
-func _on_pass_button_pressed():
-	pass_schools()	
-#endregion

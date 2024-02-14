@@ -1,7 +1,6 @@
 [gd_scene load_steps=42 format=3 uid="uid://c7kw6d5ox18mt"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
-[ext_resource type="Script" path="res://Scripts/Class/Animated_Button.gd" id="2_87au6"]
 [ext_resource type="PackedScene" uid="uid://chtrdqbf61mhs" path="res://Scene/Screen/In_game/Puzzles/DebugPuzzle/DebugPuzzle.tscn" id="2_kojua"]
 [ext_resource type="Texture2D" uid="uid://4trngi1yarw3" path="res://Assets/Art/Others/Ball.svg" id="3_8sghc"]
 [ext_resource type="PackedScene" uid="uid://x1no43ysnx7" path="res://Scene/Screen/In_game/Puzzles/Memory/MemoryBoard.tscn" id="3_ayrn1"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d02hb0bi0q488" path="res://Assets/Art/Others/Pista.svg" id="7_x7n0i"]
 [ext_resource type="Texture2D" uid="uid://dwe5mo8w6mmk1" path="res://Assets/Art/Others/Cloud/cloud_2.svg" id="7_xh84r"]
 [ext_resource type="FontVariation" uid="uid://dxydbltu0sb8j" path="res://Assets/Fontes/Create/main.tres" id="13_2dme5"]
+[ext_resource type="AudioStream" uid="uid://dxnwe182uasv2" path="res://Assets/Audio/sambajam Edit 1 Export 2.ogg" id="16_ymdva"]
 
 [sub_resource type="Theme" id="Theme_8efqr"]
 
@@ -1153,16 +1153,6 @@ offset_bottom = 597.0
 theme_override_fonts/font = ExtResource("13_2dme5")
 text = "Tittle"
 
-[node name="Pass_button" type="Button" parent="Gui/Panel"]
-layout_mode = 0
-offset_left = 1024.0
-offset_top = 568.0
-offset_right = 1128.0
-offset_bottom = 632.0
-mouse_default_cursor_shape = 2
-text = "Pass"
-script = ExtResource("2_87au6")
-
 [node name="Schools_gui" type="CanvasLayer" parent="."]
 
 [node name="School_panel" type="Control" parent="Schools_gui"]
@@ -1187,6 +1177,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PuzzleContainer" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="PuzzleArea" type="Control" parent="PuzzleContainer"]
 layout_mode = 3
@@ -1214,4 +1205,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 
-[connection signal="pressed" from="Gui/Panel/Pass_button" to="." method="_on_pass_button_pressed"]
+[node name="BackgroundSamba" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_ymdva")
+volume_db = -6.0
+autoplay = true
+mix_target = 1
