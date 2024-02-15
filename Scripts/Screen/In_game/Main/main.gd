@@ -1,7 +1,7 @@
 extends Control
 
 signal school_selected(school: Control)
-signal puzzle_completed()
+signal game_completed()
 
 enum SCHOOLS {FIRST,SECOND,THIRD}
 
@@ -22,6 +22,7 @@ var next_school: int = 0
 func _ready() -> void:
 	_generate_schools()
 	school_selected.connect(selection_school)
+	game_completed.connect(_on_game_completed)
 
 func _generate_schools() -> void:
 	for schools_scenes: int in Schools_generation:
@@ -67,7 +68,7 @@ func pass_schools() -> void:
 	next_school += 1
 	
 	if schools_node.get_child_count() <= next_school:
-		next_school = 0
+		game_completed.emit()
 
 func _on_puzzle_solved():
 	await create_tween()\
@@ -78,7 +79,12 @@ func _on_puzzle_solved():
 	puzzle_area.get_child(0).call_deferred("queue_free")
 	pass_schools()
 
-#Debug================================
-func _on_pass_button_pressed():
-	pass_schools()	
-#endregion
+func _on_match_timer_timeout():
+	$GameOver.show()
+	await create_tween().tween_property($BackgroundSamba, "pitch_scale", 0.05, 0.75).finished
+	#$BackgroundSamba.stop()
+
+func _on_game_completed():
+	$Congratulations.show()
+	await create_tween().tween_property($BackgroundSamba, "pitch_scale", 1.5, 0.75).finished
+	#$BackgroundSamba.stop()

@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://bur0adox36g2c"]
+
+[ext_resource type="Theme" uid="uid://bfakgj81r5jg2" path="res://Assets/Themes/placeholder_ui_theme.tres" id="1_t0kfh"]
+[ext_resource type="Script" path="res://Scripts/Screen/In_game/end_game.gd" id="2_fclb7"]
+
+[node name="EndGameScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t0kfh")
+script = ExtResource("2_fclb7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.0
+offset_top = -10.0
+offset_right = 39.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 85
+text = "não foi dessa vez!"
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Message" type="Label" parent="Panel/VBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Sua escola não concluiu
+o desfile a tempo!
+Tente no próximo carnaval!!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Menu Principal"
+
+[connection signal="pressed" from="Panel/VBoxContainer/PanelContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

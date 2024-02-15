@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxnwe182uasv2"
+path="res://.godot/imported/sambajam Edit 1 Export 2.ogg-6e6bc24e7b34c4276658b7bc76aa014d.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Audio/sambajam Edit 1 Export 2.ogg"
+dest_files=["res://.godot/imported/sambajam Edit 1 Export 2.ogg-6e6bc24e7b34c4276658b7bc76aa014d.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
