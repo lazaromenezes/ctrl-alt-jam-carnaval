@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c7kw6d5ox18mt"]
+[gd_scene load_steps=44 format=3 uid="uid://c7kw6d5ox18mt"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
 [ext_resource type="PackedScene" uid="uid://chtrdqbf61mhs" path="res://Scene/Screen/In_game/Puzzles/DebugPuzzle/DebugPuzzle.tscn" id="2_kojua"]
@@ -17,6 +17,7 @@
 [ext_resource type="FontVariation" uid="uid://dxydbltu0sb8j" path="res://Assets/Fontes/Create/main.tres" id="13_2dme5"]
 [ext_resource type="PackedScene" uid="uid://dexm24dmhhjd1" path="res://Scene/Screen/In_game/Components/match_timer.tscn" id="16_r43yc"]
 [ext_resource type="AudioStream" uid="uid://dxnwe182uasv2" path="res://Assets/Audio/sambajam Edit 1 Export 2.ogg" id="16_ymdva"]
+[ext_resource type="PackedScene" uid="uid://bur0adox36g2c" path="res://Scene/Screen/In_game/end_game.tscn" id="17_yji2q"]
 
 [sub_resource type="Theme" id="Theme_8efqr"]
 
@@ -524,7 +525,6 @@ script = ExtResource("1_ccyi8")
 Schools_generation = Array[int]([0, 1, 0, 2])
 available_puzzles = Array[PackedScene]([ExtResource("2_kojua"), ExtResource("3_ayrn1"), ExtResource("4_sbsmc")])
 metadata/_edit_lock_ = true
-metadata/_edit_horizontal_guides_ = [552.0]
 
 [node name="Gui" type="CanvasLayer" parent="."]
 
@@ -1157,7 +1157,7 @@ text = "Tittle"
 
 [node name="MatchTimer" parent="Gui/Panel" instance=ExtResource("16_r43yc")]
 layout_mode = 0
-time = 300.0
+time = 30.0
 
 [node name="Schools_gui" type="CanvasLayer" parent="."]
 
@@ -1215,55 +1215,23 @@ mouse_filter = 2
 layer = 3
 visible = false
 
-[node name="Control" type="Control" parent="GameOver"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="GameOver/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -11.5
-offset_right = 46.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "GAME OVER"
+[node name="EndGameScene" parent="GameOver" instance=ExtResource("17_yji2q")]
+title = "Não foi dessa vez!"
+message = "Sua escola não conseguiu
+terminar o desfile a tempo!
+Tente no próximo carnaval."
+button = "Menu Principal"
 
 [node name="Congratulations" type="CanvasLayer" parent="."]
 layer = 3
 visible = false
 
-[node name="Control" type="Control" parent="Congratulations"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="Congratulations/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -11.5
-offset_right = 46.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "PARABÉNS!!"
+[node name="EndGameScene" parent="Congratulations" instance=ExtResource("17_yji2q")]
+title = "Campeã do Carnaval!"
+message = "Parabéns!
+Você se mostrou um ótimo condutor
+e sua escola foi campeã!"
+button = "Menu Principal"
 
 [node name="BackgroundSamba" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_ymdva")
