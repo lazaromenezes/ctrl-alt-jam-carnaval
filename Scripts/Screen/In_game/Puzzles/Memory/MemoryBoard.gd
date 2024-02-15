@@ -50,4 +50,4 @@ func _on_flipped(flipped_tile: MemoryTile):
 	
 func _check_solution():
 	if get_children().all(func(t): return t.is_flipped):
-		solved.emit()
+		solved.emit(time_reward)

@@ -7,3 +7,4 @@
 scale = Vector2(0.64, 0.64)
 script = ExtResource("1_wsmmx")
 settings = ExtResource("2_askt7")
+time_penalty = -30.0
