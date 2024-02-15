@@ -85,7 +85,7 @@ func _check_resolution() -> void:
 		.all(func(t: EightPuzzleTile): return t.is_correct())
 		
 	if all_correct:
-		solved.emit()
+		solved.emit(time_reward)
 
 func _shuffle_tiles():
 	tiles.shuffle()

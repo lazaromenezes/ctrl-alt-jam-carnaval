@@ -1157,7 +1157,7 @@ text = "Tittle"
 
 [node name="MatchTimer" parent="Gui/Panel" instance=ExtResource("16_r43yc")]
 layout_mode = 0
-time = 30.0
+time = 300.0
 
 [node name="Schools_gui" type="CanvasLayer" parent="."]
 
@@ -1183,7 +1183,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="PuzzleContainer" type="CanvasLayer" parent="."]
 layer = 2
-visible = false
 
 [node name="PuzzleArea" type="Control" parent="PuzzleContainer"]
 layout_mode = 3
@@ -1195,7 +1194,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="PuzzleContainer/PuzzleArea"]
+[node name="PanelContainer" type="Panel" parent="PuzzleContainer/PuzzleArea"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1205,11 +1204,27 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7q87p")
 
-[node name="Container" type="Panel" parent="PuzzleContainer/PuzzleArea/PanelContainer"]
+[node name="Container" type="PanelContainer" parent="PuzzleContainer/PuzzleArea/PanelContainer"]
 layout_mode = 2
+offset_left = 576.0
+offset_top = 324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
+
+[node name="SkipPuzzle" type="Button" parent="PuzzleContainer/PuzzleArea/PanelContainer"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+text = "Pular"
 
 [node name="GameOver" type="CanvasLayer" parent="."]
 layer = 3

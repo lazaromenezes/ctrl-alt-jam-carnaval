@@ -10,6 +10,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_w5qvo")
+time_penalty = -60.0
+time_reward = 10.0
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 1

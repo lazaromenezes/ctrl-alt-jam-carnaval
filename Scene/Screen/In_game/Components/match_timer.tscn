@@ -9,6 +9,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_qnb0h")
+add_color = Color(0, 0.827451, 0, 1)
+remove_color = Color(0.952941, 0, 0, 1)
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

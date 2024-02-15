@@ -28,5 +28,5 @@ func _mouse_exit() -> void:
 	var Tw = create_tween()
 	Tw.tween_property(self,"scale",save_scale_ready*exit_scale,speed).set_trans(Tween.TRANS_CUBIC)
 	
-	await !Tw.is_running()
+	await Tw.finished
 	z_index = 0

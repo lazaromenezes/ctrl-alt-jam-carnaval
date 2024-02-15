@@ -12,6 +12,7 @@ enum SCHOOLS {FIRST,SECOND,THIRD}
 @onready var tittle_text = $Gui/Panel/Tittle_text
 @onready var school_panel = $Schools_gui/School_panel
 @onready var puzzle_area = $PuzzleContainer/PuzzleArea/PanelContainer/Container
+@onready var skip_puzzle = $PuzzleContainer/PuzzleArea/PanelContainer/SkipPuzzle
 
 var new_firt_school: PackedScene = preload("res://Scene/Screen/In_game/Schools/school_first.tscn")
 var new_second_school: PackedScene = preload("res://Scene/Screen/In_game/Schools/school_second.tscn")
@@ -55,7 +56,9 @@ func selection_school(school: Control) -> void:
 	
 	var puzzle: Puzzle = available_puzzles.pick_random().instantiate()
 	puzzle.solved.connect(_on_puzzle_solved)
+	puzzle.skipped.connect(_on_puzzle_skipped)
 	puzzle_area.add_child(puzzle)
+	skip_puzzle.pressed.connect(puzzle.skip)
 
 func pass_schools() -> void:
 	var school: Control = schools_node.get_child(next_school)
@@ -70,7 +73,15 @@ func pass_schools() -> void:
 	if schools_node.get_child_count() <= next_school:
 		game_completed.emit()
 
-func _on_puzzle_solved():
+func _on_puzzle_solved(time_reward: float):
+	$Gui/Panel/MatchTimer.update(time_reward)
+	_close_puzzle_and_pass()
+
+func _on_puzzle_skipped(time_penalty: float):
+	$Gui/Panel/MatchTimer.update(time_penalty)
+	_close_puzzle_and_pass()
+
+func _close_puzzle_and_pass():
 	await create_tween()\
 	.tween_property($PuzzleContainer, "visible", false, 0.3)\
 	.set_ease(Tween.EASE_IN)\
