@@ -79,3 +79,4 @@ correct_position = 7
 [resource]
 script = ExtResource("1_ftht5")
 tiles = Array[ExtResource("2_5f4rs")]([SubResource("Resource_oyd7j"), SubResource("Resource_wasdd"), SubResource("Resource_h07h2"), SubResource("Resource_mcuns"), SubResource("Resource_hd8ql"), SubResource("Resource_40yq2"), SubResource("Resource_iskw3"), SubResource("Resource_i7gb6")])
+full_image = ExtResource("3_2w0la")
