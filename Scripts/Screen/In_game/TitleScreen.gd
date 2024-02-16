@@ -7,4 +7,4 @@ func _on_credits_button_pressed():
 	SceneManager.transition_to(SceneManager.CreditsScreen)
 
 func _on_play_button_pressed():
-	SceneManager.transition_to(SceneManager.GameScreen)
+	SceneManager.transition_to(SceneManager.BriefingScreen)
