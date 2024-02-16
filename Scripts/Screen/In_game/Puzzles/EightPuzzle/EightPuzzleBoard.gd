@@ -19,6 +19,7 @@ const MOVES_TO_CHECK: Array[Vector2i] = [
 ]
 
 @export var available_puzzles: Array[EightPuzzle] = []
+@export var preview_time: float = 2
 
 var EightPuzzleTileScene = preload("res://Scene/Screen/In_game/Puzzles/EightPuzzle/Eight_Puzzle_Tile.tscn")
 var tiles: Array[EightPuzzleTile] = [null]
@@ -26,6 +27,8 @@ var empty_place: int
 
 func _ready():
 	var current_puzzle: EightPuzzle = available_puzzles.pick_random()
+	
+	await _show_preview(current_puzzle.full_image)
 	
 	_create_tiles(current_puzzle)
 	
@@ -92,6 +95,11 @@ func _shuffle_tiles():
 	while not _can_resolve():
 		tiles.shuffle()
 
+func _show_preview(texture: Texture2D):
+	$PreviewImage.set_texture(texture)
+	await get_tree().create_timer(preview_time).timeout
+	$PreviewImage.queue_free()
+	
 # https://www.geeksforgeeks.org/check-instance-8-puzzle-solvable/
 func _can_resolve() -> bool:
 	var inversions: int = 0
