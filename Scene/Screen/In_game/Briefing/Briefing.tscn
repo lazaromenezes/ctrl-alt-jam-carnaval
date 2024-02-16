@@ -39,7 +39,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Pages/Page1"]
 layout_mode = 2
-text = "A Unidos do Gamedev está com seu desfile atrasado!"
+text = "A Unidos do Gamedev esta com seu desfile atrasado!"
 
 [node name="Page2" type="PanelContainer" parent="Pages"]
 visible = false
@@ -59,7 +59,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Pages/Page2"]
 layout_mode = 2
-text = "Desse jeito vamos perder muitos pontos na apuração"
+text = "Desse jeito vamos perder muitos pontos!"
 
 [node name="LastPage" type="PanelContainer" parent="Pages"]
 unique_name_in_owner = true
@@ -84,7 +84,7 @@ theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="Pages/LastPage/VBoxContainer"]
 layout_mode = 2
-text = "Ajude as alas com os problemas e atravesse a avenida a tempo"
+text = "Ajude os carros com problemas e atravesse a avenida a tempo."
 
 [node name="PlayButton" type="Button" parent="Pages/LastPage/VBoxContainer"]
 layout_mode = 2

@@ -1231,10 +1231,10 @@ layer = 3
 visible = false
 
 [node name="EndGameScene" parent="GameOver" instance=ExtResource("17_yji2q")]
-title = "Não foi dessa vez!"
-message = "Sua escola não conseguiu
+title = "DEU RUIM!"
+message = "Sua escola nao conseguiu
 terminar o desfile a tempo!
-Tente no próximo carnaval."
+Tente no proximo carnaval."
 button = "Menu Principal"
 
 [node name="Congratulations" type="CanvasLayer" parent="."]
@@ -1242,10 +1242,10 @@ layer = 3
 visible = false
 
 [node name="EndGameScene" parent="Congratulations" instance=ExtResource("17_yji2q")]
-title = "Campeã do Carnaval!"
-message = "Parabéns!
-Você se mostrou um ótimo condutor
-e sua escola foi campeã!"
+title = "Foi Sucesso!"
+message = "Sucesso!
+Todos os carros atravessaram e 
+ganhamos o carnaval!"
 button = "Menu Principal"
 
 [node name="BackgroundSamba" type="AudioStreamPlayer" parent="."]
