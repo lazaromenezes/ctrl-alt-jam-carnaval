@@ -1157,7 +1157,7 @@ text = "Tittle"
 
 [node name="MatchTimer" parent="Gui/Panel" instance=ExtResource("16_r43yc")]
 layout_mode = 0
-time = 60.0
+time = 300.0
 
 [node name="Schools_gui" type="CanvasLayer" parent="."]
 
@@ -1254,3 +1254,5 @@ volume_db = -6.0
 autoplay = true
 
 [connection signal="timeout" from="Gui/Panel/MatchTimer" to="." method="_on_match_timer_timeout"]
+[connection signal="clicked" from="GameOver/EndGameScene" to="." method="_on_end_game_button_clicked"]
+[connection signal="clicked" from="Congratulations/EndGameScene" to="." method="_on_end_game_button_clicked"]

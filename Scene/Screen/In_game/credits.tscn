@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg1nwgyu0mi62"]
+[gd_scene load_steps=3 format=3 uid="uid://dg1nwgyu0mi62"]
 
-[ext_resource type="Theme" uid="uid://bfakgj81r5jg2" path="res://Assets/Themes/placeholder_ui_theme.tres" id="1_8oty8"]
+[ext_resource type="Theme" uid="uid://bfakgj81r5jg2" path="res://Assets/Themes/placeholder_ui_theme.tres" id="1_qwrll"]
+[ext_resource type="Script" path="res://Scripts/Screen/In_game/Credits.gd" id="2_2m5c7"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -9,7 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_8oty8")
+theme = ExtResource("1_qwrll")
+script = ExtResource("2_2m5c7")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -62,7 +64,10 @@ Ferramentas open source
 
 obrigado a todos que jogaram e ajudaram a testar!"
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer"]
+[node name="MenuButton" type="Button" parent="Panel/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "menu principal"
+
+[connection signal="pressed" from="Panel/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
