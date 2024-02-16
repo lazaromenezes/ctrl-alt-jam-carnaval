@@ -1,0 +1,41 @@
+name: "Desafio na Avenida CI Build"
+on:
+  push:
+    branches:
+    - main
+
+env:
+  GODOT_VERSION: 4.2.1
+  USER_VERSION: "1.0.${{ github.run_number }}"
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+
+jobs:
+  desktop-export-and-deploy:
+    strategy:
+      matrix:
+        include:
+          - platform: "win"
+            export-name: "Windows Desktop"
+          - platform: "linux"
+            export-name: "Linux Desktop"
+    name: "Export ${{ matrix.platform }}"
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.2.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          lfs: true
+      - name: Setup Godot
+        run: |
+          mkdir -v -p ~/.local/share
+          ln -s /root/.local/share/godot ~/.local/share/godot
+      - name: Build
+        run: |
+          mkdir -v -p dist/${{ matrix.platform }}
+          godot -v --export-release --headless "${{ matrix.export-name }}"
+      - name: "Push to itch.io"
+        run: |
+          butler push dist/${{ matrix.platform }} ${{ secrets.ITCHIO_USERNAME }}/${{ secrets.ITCHIO_GAME }}:${{ matrix.platform }} --userversion ${{ env.USER_VERSION }}
+
