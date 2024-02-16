@@ -1,7 +1,5 @@
 extends Control
 
-signal clicked()
-
 @export_category("Labels")
 @export var title: String = ""
 @export_multiline var message: String = ""
@@ -10,7 +8,7 @@ signal clicked()
 func _ready():
 	%Title.text = title
 	%Message.text = message
-	%Button.text = button
+	%MenuButton.text = button
 
-func _on_button_pressed():
-	clicked.emit()
+func _on_menu_button_pressed():
+	SceneManager.back_to_title()

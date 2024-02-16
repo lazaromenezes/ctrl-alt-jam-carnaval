@@ -61,6 +61,7 @@ func _on_tile_clicked(tile: EightPuzzleTile) -> void:
 
 func _can_move_from(place: int) -> bool:
 	var x: int = place % ROW_SIZE
+	@warning_ignore("integer_division")
 	var y: int = place / ROW_SIZE
 	
 	var grid_place: Vector2i = Vector2i(x, y)

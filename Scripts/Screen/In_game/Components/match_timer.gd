@@ -23,9 +23,9 @@ func update(time_change: float):
 	add_child(mini_label)
 	await _fade_mini_label(mini_label)	
 
-func _format_time(time):
-	var minutes: float = time / 60
-	var seconds: float = fmod(time, 60)
+func _format_time(time_value):
+	var minutes: float = time_value / 60
+	var seconds: float = fmod(time_value, 60)
 	return TIME_TEMPLATE % [minutes, seconds]
 
 func _crate_mini_label(time_change: float):

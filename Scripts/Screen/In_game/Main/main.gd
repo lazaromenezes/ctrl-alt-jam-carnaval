@@ -99,3 +99,4 @@ func _on_game_completed():
 	$Congratulations.show()
 	await create_tween().tween_property($BackgroundSamba, "pitch_scale", 1.5, 0.75).finished
 	#$BackgroundSamba.stop()
+	

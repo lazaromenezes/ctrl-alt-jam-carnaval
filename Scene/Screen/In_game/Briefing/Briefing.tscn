@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfcnl28d3dul0"]
+
+[ext_resource type="Theme" uid="uid://bfakgj81r5jg2" path="res://Assets/Themes/placeholder_ui_theme.tres" id="1_im76i"]
+[ext_resource type="Script" path="res://Scripts/Screen/In_game/Briefing/Briefing.gd" id="2_yogjb"]
+
+[node name="Briefing" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_im76i")
+script = ExtResource("2_yogjb")
+
+[node name="Pages" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Page1" type="PanelContainer" parent="Pages"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Pages/Page1"]
+layout_mode = 2
+text = "A Unidos do Gamedev está com seu desfile atrasado!"
+
+[node name="Page2" type="PanelContainer" parent="Pages"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Pages/Page2"]
+layout_mode = 2
+text = "Desse jeito vamos perder muitos pontos na apuração"
+
+[node name="LastPage" type="PanelContainer" parent="Pages"]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -30.0
+offset_right = 30.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pages/LastPage"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="Pages/LastPage/VBoxContainer"]
+layout_mode = 2
+text = "Ajude as alas com os problemas e atravesse a avenida a tempo"
+
+[node name="PlayButton" type="Button" parent="Pages/LastPage/VBoxContainer"]
+layout_mode = 2
+text = "COMEÇAR"
+
+[connection signal="pressed" from="Pages/LastPage/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
