@@ -54,9 +54,10 @@ text = "JOGAR"
 [node name="CreditsButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Créditos"
+text = "Creditos"
 
 [node name="ExitButton" type="Button" parent="Panel/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Sair"
