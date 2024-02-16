@@ -1,7 +1,6 @@
-[gd_scene load_steps=44 format=3 uid="uid://c7kw6d5ox18mt"]
+[gd_scene load_steps=43 format=3 uid="uid://c7kw6d5ox18mt"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
-[ext_resource type="PackedScene" uid="uid://chtrdqbf61mhs" path="res://Scene/Screen/In_game/Puzzles/DebugPuzzle/DebugPuzzle.tscn" id="2_kojua"]
 [ext_resource type="Texture2D" uid="uid://4trngi1yarw3" path="res://Assets/Art/Others/Ball.svg" id="3_8sghc"]
 [ext_resource type="PackedScene" uid="uid://x1no43ysnx7" path="res://Scene/Screen/In_game/Puzzles/Memory/MemoryBoard.tscn" id="3_ayrn1"]
 [ext_resource type="Texture2D" uid="uid://c2d8uu3cdpal8" path="res://Assets/Art/Persons/Background/back_1.svg" id="3_qunak"]
@@ -523,7 +522,7 @@ grow_vertical = 2
 theme = SubResource("Theme_8efqr")
 script = ExtResource("1_ccyi8")
 Schools_generation = Array[int]([0, 1, 0, 2])
-available_puzzles = Array[PackedScene]([ExtResource("2_kojua"), ExtResource("3_ayrn1"), ExtResource("4_sbsmc")])
+available_puzzles = Array[PackedScene]([ExtResource("3_ayrn1"), ExtResource("4_sbsmc")])
 metadata/_edit_lock_ = true
 
 [node name="Gui" type="CanvasLayer" parent="."]
