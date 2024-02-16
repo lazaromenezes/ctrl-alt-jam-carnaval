@@ -1,17 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://hjicid1rj6o2"]
+[gd_scene load_steps=5 format=3 uid="uid://hjicid1rj6o2"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/School.gd" id="1_lq1bp"]
 [ext_resource type="Shader" uid="uid://bucgf0e7efvc2" path="res://Assets/Shaders/Gray_effect.tres" id="1_tndyw"]
-[ext_resource type="Texture2D" uid="uid://dsibw0c2832fd" path="res://Assets/Art/Others/Carruagem.svg" id="3_cvsud"]
+[ext_resource type="Texture2D" uid="uid://dv2q2kpua1q3h" path="res://icon.svg" id="3_mcr0i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1nexh"]
 resource_local_to_scene = true
 shader = ExtResource("1_tndyw")
 shader_parameter/Gray = null
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jb0x3"]
-atlas = ExtResource("3_cvsud")
-region = Rect2(948.46, 21, 841.86, 630)
 
 [node name="SchoolThird" type="BaseButton"]
 _import_path = NodePath("")
@@ -37,7 +33,7 @@ texture_repeat = 0
 material = SubResource("ShaderMaterial_1nexh")
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(613, 486)
+custom_minimum_size = Vector2(315, 315)
 layout_direction = 0
 layout_mode = 3
 anchors_preset = -1
@@ -95,8 +91,37 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_jb0x3")
-expand_mode = 1
+texture = ExtResource("3_mcr0i")
+
+[node name="Color2" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.611765, 0, 1)
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 204.0
+offset_top = 194.0
+offset_right = -12.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mcr0i")
+
+[node name="Color3" type="TextureRect" parent="."]
+modulate = Color(0.882353, 0.611765, 0, 1)
+use_parent_material = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 23.0
+offset_right = -177.0
+offset_bottom = -195.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_mcr0i")
 
 [node name="Tittle" type="Label" parent="."]
 layout_mode = 1

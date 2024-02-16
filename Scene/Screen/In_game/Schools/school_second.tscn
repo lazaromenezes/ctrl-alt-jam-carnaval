@@ -1,17 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://byh8xse5lismk"]
+[gd_scene load_steps=5 format=3 uid="uid://byh8xse5lismk"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/School.gd" id="1_7jmq6"]
 [ext_resource type="Shader" uid="uid://bucgf0e7efvc2" path="res://Assets/Shaders/Gray_effect.tres" id="1_qsx6u"]
-[ext_resource type="Texture2D" uid="uid://dsibw0c2832fd" path="res://Assets/Art/Others/Carruagem.svg" id="3_bhobn"]
+[ext_resource type="Texture2D" uid="uid://dv2q2kpua1q3h" path="res://icon.svg" id="3_qnal1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tt3se"]
 resource_local_to_scene = true
 shader = ExtResource("1_qsx6u")
 shader_parameter/Gray = false
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ft0d"]
-atlas = ExtResource("3_bhobn")
-region = Rect2(948.46, 719.675, 841.86, 630)
 
 [node name="SchoolSecond" type="BaseButton"]
 _import_path = NodePath("")
@@ -37,7 +33,7 @@ texture_repeat = 0
 material = SubResource("ShaderMaterial_tt3se")
 use_parent_material = false
 clip_contents = false
-custom_minimum_size = Vector2(613, 486)
+custom_minimum_size = Vector2(315, 315)
 layout_direction = 0
 layout_mode = 3
 anchors_preset = -1
@@ -94,8 +90,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("AtlasTexture_1ft0d")
-expand_mode = 1
+texture = ExtResource("3_qnal1")
 
 [node name="Tittle" type="Label" parent="."]
 layout_mode = 1

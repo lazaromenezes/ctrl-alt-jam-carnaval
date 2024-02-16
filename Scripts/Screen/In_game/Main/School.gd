@@ -2,7 +2,7 @@ extends Animated_Button
 
 @export var tittle: String = "School"
 @onready var tittle_node = $Tittle
-	
+
 var main
 
 func _ready():
