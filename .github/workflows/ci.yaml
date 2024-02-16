@@ -18,6 +18,8 @@ jobs:
             export-name: "Windows Desktop"
           - platform: "linux"
             export-name: "Linux Desktop"
+          - platform: "web"
+            export-name: "Web"
     name: "Export ${{ matrix.platform }}"
     runs-on: ubuntu-latest
     container:
