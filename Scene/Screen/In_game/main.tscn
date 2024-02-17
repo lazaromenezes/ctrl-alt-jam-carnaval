@@ -560,7 +560,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_8efqr")
 script = ExtResource("1_ccyi8")
-Schools_generation = Array[int]([0, 1, 2, 3, 0, 1, 2, 3])
+Schools_generation = Array[int]([0, 1, 2, 3])
 available_puzzles = Array[PackedScene]([ExtResource("3_ayrn1"), ExtResource("4_sbsmc")])
 metadata/_edit_lock_ = true
 
