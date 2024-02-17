@@ -3,7 +3,7 @@ extends Control
 signal school_selected(school: Control)
 signal game_completed()
 
-enum SCHOOLS {FIRST,SECOND,THIRD}
+enum SCHOOLS {FLOR,KING,VENEZA,PINHEIROS}
 
 @export var Schools_generation: Array[SCHOOLS] = []
 @export var available_puzzles: Array[PackedScene] = []
@@ -13,10 +13,12 @@ enum SCHOOLS {FIRST,SECOND,THIRD}
 @onready var school_panel = $Schools_gui/School_panel
 @onready var puzzle_area = $PuzzleContainer/PuzzleArea/PanelContainer/Container
 @onready var skip_puzzle = $PuzzleContainer/PuzzleArea/PanelContainer/SkipPuzzle
+@onready var blur = $PuzzleContainer/PuzzleArea/PanelContainer/Blur
 
-var new_firt_school: PackedScene = preload("res://Scene/Screen/In_game/Schools/school_first.tscn")
-var new_second_school: PackedScene = preload("res://Scene/Screen/In_game/Schools/school_second.tscn")
-var new_third_school: PackedScene = preload("res://Scene/Screen/In_game/Schools/school_third.tscn")
+var new_escola_flor: PackedScene = preload("res://Scene/Screen/In_game/Schools/escola_da_flor.tscn")
+var new_king_of_samba: PackedScene = preload("res://Scene/Screen/In_game/Schools/king_of_samba.tscn")
+var new_veneza_show: PackedScene = preload("res://Scene/Screen/In_game/Schools/veneza_show.tscn")
+var new_pinheiros: PackedScene = preload("res://Scene/Screen/In_game/Schools/pinheiros.tscn")
 
 var next_school: int = 0
 
@@ -30,12 +32,14 @@ func _generate_schools() -> void:
 		var school
 		
 		match schools_scenes:
-			SCHOOLS.FIRST:
-				school = new_firt_school.instantiate()
-			SCHOOLS.SECOND:
-				school  = new_second_school.instantiate()
-			SCHOOLS.THIRD:
-				school  = new_third_school.instantiate()
+			SCHOOLS.FLOR:
+				school = new_escola_flor.instantiate()
+			SCHOOLS.KING:
+				school  = new_king_of_samba.instantiate()
+			SCHOOLS.VENEZA:
+				school  = new_veneza_show.instantiate()
+			SCHOOLS.PINHEIROS:
+				school  = new_pinheiros.instantiate()
 		
 		school.main = self
 		school.disabled = true
@@ -59,6 +63,17 @@ func selection_school(school: Control) -> void:
 	puzzle.skipped.connect(_on_puzzle_skipped)
 	puzzle_area.add_child(puzzle)
 	skip_puzzle.pressed.connect(puzzle.skip)
+	
+	#animation
+	var tw = get_tree().create_tween()
+	
+	puzzle_area.modulate.a = 0
+	await  get_tree().create_timer(0.4)
+	tw.tween_property(puzzle_area,"modulate:a",1,0.3).set_trans(Tween.TRANS_BOUNCE)
+	
+	await  get_tree().create_timer(0.4)
+	tw.tween_property(blur,"modulate:a",1,0.3).set_trans(Tween.TRANS_BOUNCE)
+
 
 func pass_schools() -> void:
 	var school: Control = schools_node.get_child(next_school)
@@ -72,6 +87,8 @@ func pass_schools() -> void:
 	
 	if schools_node.get_child_count() <= next_school:
 		game_completed.emit()
+	
+	tw.tween_property(blur,"modulate:a",0,0.3).set_trans(Tween.TRANS_BOUNCE)
 
 func _on_puzzle_solved(time_reward: float):
 	$Gui/Panel/MatchTimer.update(time_reward)

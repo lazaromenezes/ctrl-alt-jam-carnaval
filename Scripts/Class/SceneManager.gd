@@ -5,7 +5,7 @@ var TitleScreen: PackedScene = preload("res://Scene/Screen/In_game/TitleScreen.t
 var BriefingScreen: PackedScene = preload("res://Scene/Screen/In_game/Briefing/Briefing.tscn")
 
 func transition_to(screen: PackedScene):
-	get_tree().change_scene_to_packed(screen)
+	Loading.scene_pass(screen)
 	
 func back_to_title():
 	transition_to(TitleScreen)

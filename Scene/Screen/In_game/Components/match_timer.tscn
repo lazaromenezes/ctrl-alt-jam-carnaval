@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dexm24dmhhjd1"]
+[gd_scene load_steps=5 format=3 uid="uid://dexm24dmhhjd1"]
 
 [ext_resource type="FontVariation" uid="uid://dxydbltu0sb8j" path="res://Assets/Fontes/Create/main.tres" id="1_dgvbq"]
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Components/match_timer.gd" id="1_qnb0h"]
+[ext_resource type="Texture2D" uid="uid://cssjwenmvpk6v" path="res://Assets/Art/Others/Carruagem.svg" id="2_nvwcl"]
 
-[node name="MatchTimer" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mn01"]
+atlas = ExtResource("2_nvwcl")
+region = Rect2(1486, 1671, 259, 162)
+
+[node name="MatchTimer" type="CanvasLayer"]
 script = ExtResource("1_qnb0h")
 add_color = Color(0, 0.827451, 0, 1)
 remove_color = Color(0.952941, 0, 0, 1)
@@ -15,12 +16,21 @@ remove_color = Color(0.952941, 0, 0, 1)
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="TimerLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 912.0
-offset_top = 552.0
-offset_right = 1067.0
-offset_bottom = 597.0
+[node name="Time_Tex" type="TextureRect" parent="."]
+offset_left = 956.0
+offset_top = 454.0
+offset_right = 1133.0
+offset_bottom = 565.0
+texture = SubResource("AtlasTexture_0mn01")
+expand_mode = 1
+
+[node name="TimerLabel" type="Label" parent="Time_Tex"]
+modulate = Color(0.270588, 0.768627, 0.690196, 1)
+layout_mode = 2
+offset_left = 10.0
+offset_top = 44.0
+offset_right = 149.0
+offset_bottom = 89.0
+size_flags_vertical = 1
 theme_override_fonts/font = ExtResource("1_dgvbq")
 text = "05:00"
-horizontal_alignment = 2

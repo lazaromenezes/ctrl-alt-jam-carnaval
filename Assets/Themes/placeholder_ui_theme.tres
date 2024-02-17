@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bfakgj81r5jg2"]
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://bfakgj81r5jg2"]
 
 [ext_resource type="FontFile" uid="uid://cima768p1e6c5" path="res://Assets/Fontes/Import/Heyhoo.ttf" id="1_aq56r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_su1rh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ekh1"]
 content_margin_left = 15.0
@@ -35,6 +37,7 @@ corner_radius_bottom_left = 23
 [resource]
 Button/colors/font_color = Color(0.898039, 0.921569, 0.603922, 1)
 Button/fonts/font = ExtResource("1_aq56r")
+Button/styles/focus = SubResource("StyleBoxEmpty_su1rh")
 Button/styles/normal = SubResource("StyleBoxFlat_5ekh1")
 Label/colors/font_color = Color(0.901961, 0.282353, 0.533333, 1)
 Label/fonts/font = ExtResource("1_aq56r")

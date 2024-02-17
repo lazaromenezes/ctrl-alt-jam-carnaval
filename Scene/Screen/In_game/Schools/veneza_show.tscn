@@ -1,0 +1,216 @@
+[gd_scene load_steps=14 format=3 uid="uid://iauncxylgnxc"]
+
+[ext_resource type="Shader" uid="uid://bucgf0e7efvc2" path="res://Assets/Shaders/Gray_effect.tres" id="1_ydt32"]
+[ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/School.gd" id="2_bviio"]
+[ext_resource type="Texture2D" uid="uid://b3uc0aq7nujdy" path="res://Assets/Art/Puzzles/Carruagens/maks_veneza.svg" id="3_usg5j"]
+[ext_resource type="FontVariation" uid="uid://dxydbltu0sb8j" path="res://Assets/Fontes/Create/main.tres" id="4_3webq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tt3se"]
+resource_local_to_scene = true
+shader = ExtResource("1_ydt32")
+shader_parameter/Gray = false
+
+[sub_resource type="Curve" id="Curve_0jicq"]
+_data = [Vector2(0, 0), 0.0, 25.1056, 0, 0, Vector2(0.0835016, 0.887617), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.93663, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1ks0x"]
+curve = SubResource("Curve_0jicq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_144k1"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(67.865, 1, 1)
+gravity = Vector3(0, -15.625, 0)
+radial_accel_min = 14.0
+radial_accel_max = 14.0
+scale_min = 2.1
+scale_max = 2.1
+scale_curve = SubResource("CurveTexture_1ks0x")
+
+[sub_resource type="Gradient" id="Gradient_12j11"]
+offsets = PackedFloat32Array(0.581638, 0.601489)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i1woi"]
+gradient = SubResource("Gradient_12j11")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_4ab4g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Color:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bvgse"]
+resource_name = "Start"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Color:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.8, 3, 4, 5.6),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [0.0, 0.0837758, -0.10472, 0.0872665, 0.0, -0.0832649]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Color:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5, 2.6, 2.9, 3.1, 5.1),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.16), Vector2(1, 1), Vector2(1, 1), Vector2(1.2, 0.77), Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nfbpv"]
+_data = {
+"RESET": SubResource("Animation_4ab4g"),
+"Start": SubResource("Animation_bvgse")
+}
+
+[node name="Veneza_show" type="BaseButton"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = SubResource("ShaderMaterial_tt3se")
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(315, 315)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.340278
+anchor_bottom = 0.486111
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+size_flags_stretch_ratio = 1.0
+auto_translate = true
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 2
+mouse_filter = 0
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 2
+theme = null
+theme_type_variation = &""
+disabled = false
+toggle_mode = false
+button_pressed = false
+action_mode = 1
+button_mask = 1
+keep_pressed_outside = false
+button_group = null
+shortcut = null
+shortcut_feedback = true
+shortcut_in_tooltip = true
+script = ExtResource("2_bviio")
+tittle = "Veneza show"
+metadata/_edit_use_anchors_ = true
+
+[node name="Smoke" type="GPUParticles2D" parent="."]
+modulate = Color(0.270588, 0.768627, 0.690196, 1)
+position = Vector2(200, 288)
+process_material = SubResource("ParticleProcessMaterial_144k1")
+texture = SubResource("GradientTexture2D_i1woi")
+lifetime = 4.0
+explosiveness = 0.6
+
+[node name="Color" type="TextureRect" parent="."]
+use_parent_material = true
+layout_mode = 0
+offset_right = 387.478
+offset_bottom = 315.0
+pivot_offset = Vector2(216, 312)
+texture = ExtResource("3_usg5j")
+expand_mode = 5
+
+[node name="Tittle" type="Label" parent="."]
+modulate = Color(0.423529, 0.882353, 1, 1)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -43.0
+offset_right = 62.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0.278431, 0.34902, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_3webq")
+text = "Tittle"
+
+[node name="Anima" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nfbpv")
+}
+autoplay = "Start"
