@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cssjwenmvpk6v"
-path="res://.godot/imported/Carruagem.svg-e175820c0b9fb14d31764fc8a9aebae1.ctex"
+uid="uid://cwh0rg81tkdq"
+path="res://.godot/imported/mask_spike.svg-b7a1689de33ef97b2a6ca3c233040608.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Others/Carruagem.svg"
-dest_files=["res://.godot/imported/Carruagem.svg-e175820c0b9fb14d31764fc8a9aebae1.ctex"]
+source_file="res://Assets/Art/Puzzles/Carruagens/mask_spike.svg"
+dest_files=["res://.godot/imported/mask_spike.svg-b7a1689de33ef97b2a6ca3c233040608.ctex"]
 
 [params]
 

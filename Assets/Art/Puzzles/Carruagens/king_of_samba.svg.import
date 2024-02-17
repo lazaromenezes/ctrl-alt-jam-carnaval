@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cssjwenmvpk6v"
-path="res://.godot/imported/Carruagem.svg-e175820c0b9fb14d31764fc8a9aebae1.ctex"
+uid="uid://dbjd7kqcfswu2"
+path="res://.godot/imported/king_of_samba.svg-e8fc3ae68f1daa2e5ab1cc44010bc640.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Others/Carruagem.svg"
-dest_files=["res://.godot/imported/Carruagem.svg-e175820c0b9fb14d31764fc8a9aebae1.ctex"]
+source_file="res://Assets/Art/Puzzles/Carruagens/king_of_samba.svg"
+dest_files=["res://.godot/imported/king_of_samba.svg-e8fc3ae68f1daa2e5ab1cc44010bc640.ctex"]
 
 [params]
 

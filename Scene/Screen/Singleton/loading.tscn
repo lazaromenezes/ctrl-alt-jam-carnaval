@@ -1,0 +1,154 @@
+[gd_scene load_steps=5 format=3 uid="uid://be8jqh2mtmlk2"]
+
+[ext_resource type="Script" path="res://Scripts/Singleton/Loading.gd" id="1_svuom"]
+
+[sub_resource type="Animation" id="Animation_84mn5"]
+resource_name = "Start"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 3.6, 4.2),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 648), Vector2(0, 0), Vector2(0, 0), Vector2(0, -648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cor2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.7, 3, 3.7),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 648), Vector2(0, 0), Vector2(0, 0), Vector2(0, -648)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cor3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.2, 2.6, 3.2),
+"transitions": PackedFloat32Array(-2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 648), Vector2(0, 0), Vector2(0, 0), Vector2(0, -648)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_uvlcq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 648)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cor2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 648)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cor3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 648)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yrfse"]
+_data = {
+"RESET": SubResource("Animation_uvlcq"),
+"Start": SubResource("Animation_84mn5")
+}
+
+[node name="Loading" type="CanvasLayer"]
+layer = 5
+script = ExtResource("1_svuom")
+
+[node name="Animation" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Anima" type="AnimationPlayer" parent="Animation"]
+libraries = {
+"": SubResource("AnimationLibrary_yrfse")
+}
+speed_scale = 1.46
+
+[node name="Cor" type="ColorRect" parent="Animation"]
+modulate = Color(0.270588, 0.768627, 0.690196, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 648.0
+offset_bottom = 648.001
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cor2" type="ColorRect" parent="Animation"]
+modulate = Color(0, 0.631373, 0.792157, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 648.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cor3" type="ColorRect" parent="Animation"]
+modulate = Color(0, 0.278431, 0.34902, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 648.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2

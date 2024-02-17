@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://c7kw6d5ox18mt"]
+[gd_scene load_steps=56 format=3 uid="uid://c7kw6d5ox18mt"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
 [ext_resource type="Texture2D" uid="uid://4trngi1yarw3" path="res://Assets/Art/Others/Ball.svg" id="3_8sghc"]
@@ -16,7 +16,10 @@
 [ext_resource type="FontVariation" uid="uid://dxydbltu0sb8j" path="res://Assets/Fontes/Create/main.tres" id="13_2dme5"]
 [ext_resource type="PackedScene" uid="uid://dexm24dmhhjd1" path="res://Scene/Screen/In_game/Components/match_timer.tscn" id="16_r43yc"]
 [ext_resource type="AudioStream" uid="uid://dxnwe182uasv2" path="res://Assets/Audio/sambajam Edit 1 Export 2.ogg" id="16_ymdva"]
+[ext_resource type="Shader" path="res://Assets/Shaders/blur.gdshader" id="17_dnnn3"]
 [ext_resource type="PackedScene" uid="uid://bur0adox36g2c" path="res://Scene/Screen/In_game/end_game.tscn" id="17_yji2q"]
+[ext_resource type="Texture2D" uid="uid://cssjwenmvpk6v" path="res://Assets/Art/Others/Carruagem.svg" id="18_3ny5d"]
+[ext_resource type="FontFile" uid="uid://cima768p1e6c5" path="res://Assets/Fontes/Import/Heyhoo.ttf" id="18_hn6ii"]
 
 [sub_resource type="Theme" id="Theme_8efqr"]
 
@@ -510,7 +513,43 @@ region = Rect2(538, 188, 37, 29)
 atlas = ExtResource("6_0emx4")
 region = Rect2(538, 221, 49, 39)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7q87p"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f5pn2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adcvc"]
+shader = ExtResource("17_dnnn3")
+
+[sub_resource type="FontVariation" id="FontVariation_j2xge"]
+base_font = ExtResource("18_hn6ii")
+variation_transform = Transform2D(4.05, 0, 0, 4, 0, 0)
+spacing_glyph = 13
+spacing_top = 30
+spacing_bottom = -100
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bo4gb"]
+atlas = ExtResource("18_3ny5d")
+region = Rect2(1189, 1710, 283, 124)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wf7xx"]
+texture = SubResource("AtlasTexture_bo4gb")
+region_rect = Rect2(0, 0, 285.06, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hlqf"]
+atlas = ExtResource("18_3ny5d")
+region = Rect2(869, 1710, 283, 124)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqcar"]
+texture = SubResource("AtlasTexture_5hlqf")
+region_rect = Rect2(0, 0, 285.06, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyo83"]
+atlas = ExtResource("18_3ny5d")
+region = Rect2(534, 1710, 283, 124)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4qrdt"]
+texture = SubResource("AtlasTexture_iyo83")
+region_rect = Rect2(0, 0, 285.06, 124)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x0kca"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -521,7 +560,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_8efqr")
 script = ExtResource("1_ccyi8")
-Schools_generation = Array[int]([0, 1, 0, 2])
+Schools_generation = Array[int]([0, 1, 2, 3])
 available_puzzles = Array[PackedScene]([ExtResource("3_ayrn1"), ExtResource("4_sbsmc")])
 metadata/_edit_lock_ = true
 
@@ -1155,7 +1194,6 @@ theme_override_fonts/font = ExtResource("13_2dme5")
 text = "Tittle"
 
 [node name="MatchTimer" parent="Gui/Panel" instance=ExtResource("16_r43yc")]
-layout_mode = 0
 time = 60.0
 
 [node name="Schools_gui" type="CanvasLayer" parent="."]
@@ -1194,6 +1232,7 @@ size_flags_horizontal = 4
 mouse_filter = 1
 
 [node name="PanelContainer" type="Panel" parent="PuzzleContainer/PuzzleArea"]
+self_modulate = Color(0, 0, 0, 0.792157)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1201,7 +1240,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_7q87p")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_f5pn2")
+
+[node name="Blur" type="ColorRect" parent="PuzzleContainer/PuzzleArea/PanelContainer"]
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_adcvc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Blur2" type="ColorRect" parent="PuzzleContainer/PuzzleArea/PanelContainer/Blur"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.603922)
 
 [node name="Container" type="PanelContainer" parent="PuzzleContainer/PuzzleArea/PanelContainer"]
 layout_mode = 2
@@ -1220,9 +1281,30 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -8.0
-offset_bottom = 8.0
+offset_left = -194.0
+offset_top = 574.0
+offset_right = -21.0
+offset_bottom = 637.0
 grow_horizontal = 0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = SubResource("FontVariation_j2xge")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_wf7xx")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vqcar")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4qrdt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_x0kca")
+alignment = 0
+
+[node name="Text" type="Label" parent="PuzzleContainer/PuzzleArea/PanelContainer/SkipPuzzle"]
+modulate = Color(0.270588, 0.768627, 0.690196, 1)
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 148.0
+offset_bottom = 52.0
+theme_override_colors/font_outline_color = Color(0, 0.278431, 0.34902, 1)
+theme_override_fonts/font = ExtResource("13_2dme5")
+theme_override_font_sizes/font_size = 11
 text = "Pular"
 
 [node name="GameOver" type="CanvasLayer" parent="."]

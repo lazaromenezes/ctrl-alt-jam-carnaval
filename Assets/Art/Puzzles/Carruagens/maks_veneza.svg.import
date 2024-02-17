@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cssjwenmvpk6v"
-path="res://.godot/imported/Carruagem.svg-e175820c0b9fb14d31764fc8a9aebae1.ctex"
+uid="uid://b3uc0aq7nujdy"
+path="res://.godot/imported/maks_veneza.svg-237722de6d19195d17944b7c0512d3c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Others/Carruagem.svg"
-dest_files=["res://.godot/imported/Carruagem.svg-e175820c0b9fb14d31764fc8a9aebae1.ctex"]
+source_file="res://Assets/Art/Puzzles/Carruagens/maks_veneza.svg"
+dest_files=["res://.godot/imported/maks_veneza.svg-237722de6d19195d17944b7c0512d3c1.ctex"]
 
 [params]
 

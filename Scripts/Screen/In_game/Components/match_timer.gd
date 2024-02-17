@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 signal timeout()
 
@@ -19,7 +19,7 @@ func _ready():
 	$Timer.timeout.connect(func(): timeout.emit())
 
 func _process(_delta):
-	$TimerLabel.text = _format_time($Timer.time_left)
+	$Time_Tex/TimerLabel.text = _format_time($Timer.time_left)
 
 func update(time_change: float):
 	$Timer.start($Timer.time_left + time_change)
@@ -37,7 +37,7 @@ func _crate_mini_label(time_change: float):
 	var color = add_color if time_change > 0 else remove_color
 	var mini_label = Label.new()
 	mini_label.text = _format_time(time_change)
-	mini_label.position = $TimerLabel.position
+	mini_label.position = $Time_Tex/TimerLabel.position
 	mini_label.set("theme_override_colors/font_color", color)	
 	return mini_label
 
