@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Desafio da Avenida"
-run/main_scene="res://Scene/Screen/In_game/TitleScreen.tscn"
+run/main_scene="res://Scene/Screen/In_game/splash.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 

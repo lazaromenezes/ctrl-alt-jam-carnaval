@@ -1,7 +1,273 @@
-[gd_scene load_steps=3 format=3 uid="uid://3ub44ajody64"]
+[gd_scene load_steps=21 format=3 uid="uid://3ub44ajody64"]
 
 [ext_resource type="Theme" uid="uid://bfakgj81r5jg2" path="res://Assets/Themes/placeholder_ui_theme.tres" id="1_vjcub"]
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/TitleScreen.gd" id="2_ttsr8"]
+[ext_resource type="Texture2D" uid="uid://d4b2qklkbckt3" path="res://Assets/Art/Others/Menu/samba.svg" id="3_4l2kb"]
+[ext_resource type="Texture2D" uid="uid://cvisjg4dkbofv" path="res://Assets/Art/Others/Menu/Folhas.png" id="3_hlbhx"]
+[ext_resource type="Texture2D" uid="uid://cy5u10gt0yjva" path="res://Assets/Art/Persons/All_persons.svg" id="4_41136"]
+[ext_resource type="Texture2D" uid="uid://b5sn1a4nsuubu" path="res://Assets/Art/Others/Menu/mask.svg" id="4_h5tr6"]
+[ext_resource type="Texture2D" uid="uid://c2d8uu3cdpal8" path="res://Assets/Art/Persons/Background/back_1.svg" id="4_tijkc"]
+[ext_resource type="Texture2D" uid="uid://ct67cjllk1re" path="res://Assets/Art/Others/Menu/mask_veneza.svg" id="5_3a3lu"]
+[ext_resource type="Texture2D" uid="uid://cuyoxk6l6p6wg" path="res://Assets/Art/Persons/Background/back_0.svg" id="5_t55k8"]
+[ext_resource type="Texture2D" uid="uid://dosbvfn7m2efv" path="res://Assets/Art/Persons/Background/back_2.svg" id="6_us076"]
+
+[sub_resource type="Animation" id="Animation_2kgf3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("image:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("image:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("image2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("image2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("image3:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("image3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("image4:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("image4:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_tohg7"]
+resource_name = "Vibration"
+length = 4.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("image:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.8, 1.2, 2.9, 3.5, 4.3),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.12), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1.12), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("image:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 1, 1.3, 2.8, 3.7, 4.4),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [0.0, -0.107978, 0.0, 0.0, 0.10821, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("image2:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6, 1.1, 1.4, 3.6),
+"transitions": PackedFloat32Array(-2, -2, -2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.164), Vector2(1, 1), Vector2(1, 1.02593)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("image2:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.139626, -0.10472]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("image3:scale")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.9, 1.5, 2.1, 2.7, 3.3, 3.9),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1.17), Vector2(1, 1), Vector2(1, 1.17), Vector2(1, 1), Vector2(1, 1.17), Vector2(1, 1), Vector2(1, 1.17)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("image3:rotation")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 4.3),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [-0.148353, 0.148353]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("image4:scale")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 1.1, 2.60237),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.01, 0.845), Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("image4:rotation")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.12259, 2.7, 3.7209),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [0.0785398, 0.0, -0.0872665]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e3twi"]
+_data = {
+"RESET": SubResource("Animation_2kgf3"),
+"Vibration": SubResource("Animation_tohg7")
+}
+
+[sub_resource type="Curve" id="Curve_6guia"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_aenya"]
+curve = SubResource("Curve_6guia")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ocfl3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(621.43, 1, 0)
+angle_min = -720.0
+angle_max = 720.0
+direction = Vector3(0, -800, 0)
+initial_velocity_min = 917.71
+initial_velocity_max = 917.71
+angular_velocity_min = -166.34
+angular_velocity_max = 172.1
+gravity = Vector3(0, 500, 0)
+scale_min = 0.25
+scale_max = 0.85
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("CurveTexture_aenya")
+turbulence_enabled = true
+turbulence_noise_strength = 0.55
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ls4xs"]
+atlas = ExtResource("4_41136")
+region = Rect2(498, 90, 81, 36)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3g5ut"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(621.43, 1, 0)
+angular_velocity_min = -166.34
+angular_velocity_max = 172.1
+gravity = Vector3(0, 400, 0)
+scale_min = 0.25
+scale_max = 0.85
+turbulence_enabled = true
+turbulence_noise_strength = 0.55
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fba23"]
+atlas = ExtResource("4_41136")
+region = Rect2(538, 188, 37, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntt4n"]
+atlas = ExtResource("4_41136")
+region = Rect2(538, 221, 49, 39)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -20,6 +286,430 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Background" type="Control" parent="Panel"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect7" type="TextureRect" parent="Panel/Background"]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 233.0
+offset_right = 1262.0
+offset_bottom = 445.0
+rotation = 0.614033
+texture = ExtResource("3_4l2kb")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/Background"]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 288.0
+offset_right = 761.0
+offset_bottom = 765.0
+rotation = -3.05339
+texture = ExtResource("3_hlbhx")
+
+[node name="TextureRect3" type="TextureRect" parent="Panel/Background"]
+layout_mode = 0
+offset_left = 1446.0
+offset_top = 272.0
+offset_right = 1958.0
+offset_bottom = 749.0
+rotation = -3.05339
+texture = ExtResource("3_hlbhx")
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/Background"]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 326.0
+offset_right = 1334.0
+offset_bottom = 803.0
+texture = ExtResource("3_hlbhx")
+
+[node name="TextureRect4" type="TextureRect" parent="Panel/Background"]
+layout_mode = 0
+offset_left = -145.0
+offset_top = 421.0
+offset_right = 141.0
+offset_bottom = 735.0
+rotation = -0.623774
+texture = ExtResource("4_h5tr6")
+
+[node name="TextureRect5" type="TextureRect" parent="Panel/Background"]
+layout_mode = 0
+offset_left = 709.0
+offset_top = 313.0
+offset_right = 995.0
+offset_bottom = 471.0
+rotation = 0.308149
+texture = ExtResource("5_3a3lu")
+
+[node name="TextureRect6" type="TextureRect" parent="Panel/Background"]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 513.0
+offset_right = 735.0
+offset_bottom = 725.0
+rotation = 3.1006
+texture = ExtResource("3_4l2kb")
+
+[node name="Group" type="Control" parent="Panel/Background"]
+modulate = Color(0.0745098, 0.403922, 0.541176, 1)
+layout_mode = 3
+anchors_preset = 0
+offset_top = 383.0
+offset_right = 1172.0
+offset_bottom = 671.0
+
+[node name="Peopple5" type="Control" parent="Panel/Background/Group"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+anchors_preset = 0
+offset_left = 119.0
+offset_top = -27.0
+offset_right = 685.0
+offset_bottom = 261.0
+scale = Vector2(0.914511, 0.87793)
+
+[node name="image" type="TextureRect" parent="Panel/Background/Group/Peopple5"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 56.0
+offset_right = 207.0
+offset_bottom = 226.0
+pivot_offset = Vector2(107, 152)
+texture = ExtResource("4_tijkc")
+expand_mode = 1
+
+[node name="image2" type="TextureRect" parent="Panel/Background/Group/Peopple5"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 43.0
+offset_right = 314.0
+offset_bottom = 213.0
+pivot_offset = Vector2(112, 165)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+
+[node name="image3" type="TextureRect" parent="Panel/Background/Group/Peopple5"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 56.0
+offset_right = 450.0
+offset_bottom = 226.0
+pivot_offset = Vector2(110, 170)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+flip_h = true
+
+[node name="image4" type="TextureRect" parent="Panel/Background/Group/Peopple5"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 80.0
+offset_right = 603.0
+offset_bottom = 250.0
+pivot_offset = Vector2(95.4545, 149)
+texture = ExtResource("6_us076")
+expand_mode = 1
+
+[node name="Anima" type="AnimationPlayer" parent="Panel/Background/Group/Peopple5"]
+libraries = {
+"": SubResource("AnimationLibrary_e3twi")
+}
+autoplay = "Vibration"
+speed_scale = 0.655
+
+[node name="Peopple6" type="Control" parent="Panel/Background/Group"]
+modulate = Color(0.25098, 0.25098, 0.25098, 1)
+anchors_preset = 0
+offset_left = 515.0
+offset_top = -10.0
+offset_right = 1081.0
+offset_bottom = 278.0
+scale = Vector2(0.882923, 0.988874)
+
+[node name="image" type="TextureRect" parent="Panel/Background/Group/Peopple6"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 56.0
+offset_right = 207.0
+offset_bottom = 226.0
+pivot_offset = Vector2(107, 152)
+texture = ExtResource("4_tijkc")
+expand_mode = 1
+
+[node name="image2" type="TextureRect" parent="Panel/Background/Group/Peopple6"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 43.0
+offset_right = 314.0
+offset_bottom = 213.0
+pivot_offset = Vector2(112, 165)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+
+[node name="image3" type="TextureRect" parent="Panel/Background/Group/Peopple6"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 56.0
+offset_right = 450.0
+offset_bottom = 226.0
+pivot_offset = Vector2(110, 170)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+flip_h = true
+
+[node name="image4" type="TextureRect" parent="Panel/Background/Group/Peopple6"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 80.0
+offset_right = 603.0
+offset_bottom = 250.0
+pivot_offset = Vector2(95.4545, 149)
+texture = ExtResource("6_us076")
+expand_mode = 1
+
+[node name="Anima" type="AnimationPlayer" parent="Panel/Background/Group/Peopple6"]
+libraries = {
+"": SubResource("AnimationLibrary_e3twi")
+}
+autoplay = "Vibration"
+speed_scale = 0.605
+
+[node name="Peopple" type="Control" parent="Panel/Background/Group"]
+modulate = Color(0.454902, 0.454902, 0.454902, 1)
+anchors_preset = 0
+offset_left = 34.0
+offset_top = 21.0
+offset_right = 600.0
+offset_bottom = 309.0
+scale = Vector2(1, 0.959999)
+
+[node name="image" type="TextureRect" parent="Panel/Background/Group/Peopple"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 56.0
+offset_right = 207.0
+offset_bottom = 226.0
+pivot_offset = Vector2(107, 152)
+texture = ExtResource("4_tijkc")
+expand_mode = 1
+
+[node name="image2" type="TextureRect" parent="Panel/Background/Group/Peopple"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 43.0
+offset_right = 314.0
+offset_bottom = 213.0
+pivot_offset = Vector2(112, 165)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+
+[node name="image3" type="TextureRect" parent="Panel/Background/Group/Peopple"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 56.0
+offset_right = 450.0
+offset_bottom = 226.0
+pivot_offset = Vector2(110, 170)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+flip_h = true
+
+[node name="image4" type="TextureRect" parent="Panel/Background/Group/Peopple"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 80.0
+offset_right = 603.0
+offset_bottom = 250.0
+pivot_offset = Vector2(95.4545, 149)
+texture = ExtResource("6_us076")
+expand_mode = 1
+
+[node name="Anima" type="AnimationPlayer" parent="Panel/Background/Group/Peopple"]
+libraries = {
+"": SubResource("AnimationLibrary_e3twi")
+}
+autoplay = "Vibration"
+speed_scale = 0.955
+
+[node name="Peopple2" type="Control" parent="Panel/Background/Group"]
+modulate = Color(0.454902, 0.454902, 0.454902, 1)
+anchors_preset = 0
+offset_left = 578.0
+offset_top = 21.0
+offset_right = 1144.0
+offset_bottom = 309.0
+scale = Vector2(1, 1.12)
+
+[node name="image" type="TextureRect" parent="Panel/Background/Group/Peopple2"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 56.0
+offset_right = 207.0
+offset_bottom = 226.0
+pivot_offset = Vector2(107, 152)
+texture = ExtResource("4_tijkc")
+expand_mode = 1
+
+[node name="image2" type="TextureRect" parent="Panel/Background/Group/Peopple2"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 43.0
+offset_right = 314.0
+offset_bottom = 213.0
+pivot_offset = Vector2(112, 165)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+
+[node name="image3" type="TextureRect" parent="Panel/Background/Group/Peopple2"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 56.0
+offset_right = 450.0
+offset_bottom = 226.0
+pivot_offset = Vector2(110, 170)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+flip_h = true
+
+[node name="image4" type="TextureRect" parent="Panel/Background/Group/Peopple2"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 80.0
+offset_right = 603.0
+offset_bottom = 250.0
+pivot_offset = Vector2(95.4545, 149)
+texture = ExtResource("6_us076")
+expand_mode = 1
+
+[node name="Anima" type="AnimationPlayer" parent="Panel/Background/Group/Peopple2"]
+libraries = {
+"": SubResource("AnimationLibrary_e3twi")
+}
+autoplay = "Vibration"
+speed_scale = 1.19
+
+[node name="Mask" type="GPUParticles2D" parent="Panel/Background/Group"]
+position = Vector2(608, 200)
+process_material = SubResource("ParticleProcessMaterial_ocfl3")
+texture = SubResource("AtlasTexture_ls4xs")
+lifetime = 2.7
+explosiveness = 0.3
+fixed_fps = 0
+draw_order = 0
+
+[node name="Peopple3" type="Control" parent="Panel/Background/Group"]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 96.0
+offset_right = 586.0
+offset_bottom = 384.0
+scale = Vector2(1, 0.959999)
+
+[node name="image" type="TextureRect" parent="Panel/Background/Group/Peopple3"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 56.0
+offset_right = 207.0
+offset_bottom = 226.0
+pivot_offset = Vector2(107, 152)
+texture = ExtResource("4_tijkc")
+expand_mode = 1
+
+[node name="image2" type="TextureRect" parent="Panel/Background/Group/Peopple3"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 43.0
+offset_right = 314.0
+offset_bottom = 213.0
+pivot_offset = Vector2(112, 165)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+
+[node name="image3" type="TextureRect" parent="Panel/Background/Group/Peopple3"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 56.0
+offset_right = 450.0
+offset_bottom = 226.0
+pivot_offset = Vector2(110, 170)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+flip_h = true
+
+[node name="image4" type="TextureRect" parent="Panel/Background/Group/Peopple3"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 80.0
+offset_right = 603.0
+offset_bottom = 250.0
+pivot_offset = Vector2(95.4545, 149)
+texture = ExtResource("6_us076")
+expand_mode = 1
+
+[node name="Anima" type="AnimationPlayer" parent="Panel/Background/Group/Peopple3"]
+libraries = {
+"": SubResource("AnimationLibrary_e3twi")
+}
+autoplay = "Vibration"
+
+[node name="Peopple4" type="Control" parent="Panel/Background/Group"]
+anchors_preset = 0
+offset_left = 566.0
+offset_top = 99.0
+offset_right = 1132.0
+offset_bottom = 387.0
+rotation = -0.0754786
+scale = Vector2(1, 1.12)
+
+[node name="image" type="TextureRect" parent="Panel/Background/Group/Peopple4"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 56.0
+offset_right = 207.0
+offset_bottom = 226.0
+pivot_offset = Vector2(107, 152)
+texture = ExtResource("4_tijkc")
+expand_mode = 1
+
+[node name="image2" type="TextureRect" parent="Panel/Background/Group/Peopple4"]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 43.0
+offset_right = 314.0
+offset_bottom = 213.0
+pivot_offset = Vector2(112, 165)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+
+[node name="image3" type="TextureRect" parent="Panel/Background/Group/Peopple4"]
+layout_mode = 0
+offset_left = 231.0
+offset_top = 56.0
+offset_right = 450.0
+offset_bottom = 226.0
+pivot_offset = Vector2(110, 170)
+texture = ExtResource("5_t55k8")
+expand_mode = 1
+flip_h = true
+
+[node name="image4" type="TextureRect" parent="Panel/Background/Group/Peopple4"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 80.0
+offset_right = 603.0
+offset_bottom = 250.0
+pivot_offset = Vector2(95.4545, 149)
+texture = ExtResource("6_us076")
+expand_mode = 1
+
+[node name="Anima" type="AnimationPlayer" parent="Panel/Background/Group/Peopple4"]
+libraries = {
+"": SubResource("AnimationLibrary_e3twi")
+}
+autoplay = "Vibration"
+speed_scale = 1.44
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
@@ -61,6 +751,34 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Sair"
+
+[node name="Confete" type="Control" parent="Panel"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Confete" type="GPUParticles2D" parent="Panel/Confete"]
+modulate = Color(0.0745098, 0.403922, 0.541176, 1)
+position = Vector2(576, -24)
+amount = 14
+process_material = SubResource("ParticleProcessMaterial_3g5ut")
+texture = SubResource("AtlasTexture_fba23")
+lifetime = 11.65
+explosiveness = 0.3
+fixed_fps = 0
+draw_order = 0
+
+[node name="Confete2" type="GPUParticles2D" parent="Panel/Confete"]
+modulate = Color(0.603922, 0.921569, 0.639216, 1)
+position = Vector2(576, -24)
+amount = 14
+process_material = SubResource("ParticleProcessMaterial_3g5ut")
+texture = SubResource("AtlasTexture_ntt4n")
+lifetime = 11.65
+explosiveness = 0.3
+fixed_fps = 0
+draw_order = 0
 
 [connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
