@@ -26,8 +26,8 @@
      showgrid="false"
      showguides="true"
      inkscape:zoom="0.35212985"
-     inkscape:cx="523.95444"
-     inkscape:cy="1408.5713"
+     inkscape:cx="376.28165"
+     inkscape:cy="1769.2337"
      inkscape:window-width="1360"
      inkscape:window-height="699"
      inkscape:window-x="0"
@@ -586,5 +586,13 @@
        d="m 202.2715,456.80433 13.89902,13.89905 -14.69342,11.30826 2.13877,-9.1684 4.38168,-2.81262 -4.16519,-4.16514 z"
        id="path5893"
        sodipodi:nodetypes="ccccccc" />
+    <path
+       id="path473"
+       style="fill:#004759;fill-opacity:1;stroke:none;stroke-width:32.6025;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+       d="m 74.48915,430.36225 c -6.07798,5.48289 -26.25717,-1.69517 -33.80655,6.77285 l -11.28496,21.8049 28.06223,3.25172 c 8.93226,-8.34446 16.02815,-17.96662 17.02928,-31.82947 z"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-filename="../Puzzles/Carruagens/flor.svg"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>
