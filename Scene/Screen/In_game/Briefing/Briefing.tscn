@@ -22,7 +22,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Page1" type="PanelContainer" parent="Pages"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -42,7 +41,6 @@ layout_mode = 2
 text = "A Unidos do Gamedev esta com seu desfile atrasado!"
 
 [node name="Page2" type="PanelContainer" parent="Pages"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -62,7 +60,6 @@ layout_mode = 2
 text = "Desse jeito vamos perder muitos pontos!"
 
 [node name="Page3" type="PanelContainer" parent="Pages"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -83,7 +80,6 @@ text = "Ajude os carros com problemas e atravesse a avenida a tempo!"
 
 [node name="LastPage" type="PanelContainer" parent="Pages"]
 unique_name_in_owner = true
-visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
