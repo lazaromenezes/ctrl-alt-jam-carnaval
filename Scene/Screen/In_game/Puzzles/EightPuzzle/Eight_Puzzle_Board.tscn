@@ -9,6 +9,5 @@
 script = ExtResource("1_em7d2")
 available_puzzles = Array[Resource("res://Scripts/Resource/Puzzles/EightPuzzle/Eight_Puzzle.gd")]([ExtResource("5_bd4bm"), ExtResource("2_g0lfd"), ExtResource("4_vtlcv")])
 time_penalty = -30.0
-time_reward = 40.0
 
 [node name="PreviewImage" type="Sprite2D" parent="."]
