@@ -14,7 +14,7 @@ const TIME_TEMPLATE: String = "%02d:%02d"
 var _target_fade_position: Vector2
 
 func _ready():
-	_target_fade_position = $TimerLabel.position + fade_movement
+	_target_fade_position = $Time_Tex/TimerLabel.position + fade_movement
 	$Timer.start(time)
 	$Timer.timeout.connect(func(): timeout.emit())
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://c7kw6d5ox18mt"]
+[gd_scene load_steps=55 format=3 uid="uid://c7kw6d5ox18mt"]
 
 [ext_resource type="Script" path="res://Scripts/Screen/In_game/Main/main.gd" id="1_ccyi8"]
 [ext_resource type="Texture2D" uid="uid://4trngi1yarw3" path="res://Assets/Art/Others/Ball.svg" id="3_8sghc"]
