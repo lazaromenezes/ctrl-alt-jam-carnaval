@@ -65,15 +65,17 @@ func selection_school(school: Control) -> void:
 	skip_puzzle.pressed.connect(puzzle.skip)
 	
 	#animation
+	puzzle_area.modulate.a = 0
+	
 	var tw = get_tree().create_tween()
 	
-	puzzle_area.modulate.a = 0
-	await  get_tree().create_timer(0.4)
-	tw.tween_property(puzzle_area,"modulate:a",1,0.3).set_trans(Tween.TRANS_BOUNCE)
+	tw.tween_property(puzzle_area,"modulate:a",1,0.3)\
+	.set_trans(Tween.TRANS_BOUNCE)\
+	.set_delay(0.4)
 	
-	await  get_tree().create_timer(0.4)
-	tw.tween_property(blur,"modulate:a",1,0.3).set_trans(Tween.TRANS_BOUNCE)
-
+	tw.tween_property(blur,"modulate:a",1,0.3)\
+	.set_trans(Tween.TRANS_BOUNCE)\
+	.set_delay(0.4)
 
 func pass_schools() -> void:
 	var school: Control = schools_node.get_child(next_school)
@@ -85,18 +87,18 @@ func pass_schools() -> void:
 	tw.tween_property(school_panel,"position:x",-school.position.x+200,0.3).set_trans(Tween.TRANS_CUBIC)
 	next_school += 1
 	
-	if schools_node.get_child_count() <= next_school:
+	if next_school > schools_node.get_child_count():
 		game_completed.emit()
 	
 	tw.tween_property(blur,"modulate:a",0,0.3).set_trans(Tween.TRANS_BOUNCE)
 
 func _on_puzzle_solved(time_reward: float):
-	$Gui/Panel/MatchTimer.update(time_reward)
-	_close_puzzle_and_pass()
+	%MatchTimer.update(time_reward)
+	await _close_puzzle_and_pass()
 
 func _on_puzzle_skipped(time_penalty: float):
-	$Gui/Panel/MatchTimer.update(time_penalty)
-	_close_puzzle_and_pass()
+	%MatchTimer.update(time_penalty)
+	await _close_puzzle_and_pass()
 
 func _close_puzzle_and_pass():
 	await create_tween()\
@@ -110,10 +112,8 @@ func _close_puzzle_and_pass():
 func _on_match_timer_timeout():
 	$GameOver.show()
 	await create_tween().tween_property($BackgroundSamba, "pitch_scale", 0.05, 0.75).finished
-	#$BackgroundSamba.stop()
 
 func _on_game_completed():
 	$Congratulations.show()
 	await create_tween().tween_property($BackgroundSamba, "pitch_scale", 1.5, 0.75).finished
-	#$BackgroundSamba.stop()
 	

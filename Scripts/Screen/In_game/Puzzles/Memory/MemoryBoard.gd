@@ -42,7 +42,7 @@ func _on_flipped(flipped_tile: MemoryTile):
 		if _current_tile.data.value == flipped_tile.data.value:
 			_check_solution()
 		else:
-			await get_tree().create_timer(0.5).timeout
+			await get_tree().create_timer(0.2).timeout
 			_current_tile.flip()
 			flipped_tile.flip()
 		

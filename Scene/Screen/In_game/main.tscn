@@ -560,7 +560,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_8efqr")
 script = ExtResource("1_ccyi8")
-Schools_generation = Array[int]([0, 1, 2, 3])
+Schools_generation = Array[int]([0, 1, 2, 3, 0, 1, 2, 3])
 available_puzzles = Array[PackedScene]([ExtResource("3_ayrn1"), ExtResource("4_sbsmc")])
 metadata/_edit_lock_ = true
 
@@ -1193,9 +1193,6 @@ offset_bottom = 597.0
 theme_override_fonts/font = ExtResource("13_2dme5")
 text = "Tittle"
 
-[node name="MatchTimer" parent="Gui/Panel" instance=ExtResource("16_r43yc")]
-time = 60.0
-
 [node name="Schools_gui" type="CanvasLayer" parent="."]
 
 [node name="School_panel" type="Control" parent="Schools_gui"]
@@ -1276,6 +1273,11 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 
+[node name="MatchTimer" parent="PuzzleContainer/PuzzleArea/PanelContainer" instance=ExtResource("16_r43yc")]
+unique_name_in_owner = true
+layer = 3
+time = 60.0
+
 [node name="SkipPuzzle" type="Button" parent="PuzzleContainer/PuzzleArea/PanelContainer"]
 layout_mode = 1
 anchors_preset = 1
@@ -1334,4 +1336,4 @@ stream = ExtResource("16_ymdva")
 volume_db = -6.0
 autoplay = true
 
-[connection signal="timeout" from="Gui/Panel/MatchTimer" to="." method="_on_match_timer_timeout"]
+[connection signal="timeout" from="PuzzleContainer/PuzzleArea/PanelContainer/MatchTimer" to="." method="_on_match_timer_timeout"]

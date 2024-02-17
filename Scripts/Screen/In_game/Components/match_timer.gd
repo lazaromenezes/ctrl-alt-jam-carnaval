@@ -22,10 +22,11 @@ func _process(_delta):
 	$Time_Tex/TimerLabel.text = _format_time($Timer.time_left)
 
 func update(time_change: float):
-	$Timer.start($Timer.time_left + time_change)
+	var new_time = clamp($Timer.time_left + time_change, 0.1, 90)
+	$Timer.start(new_time)
 	
 	var mini_label = _crate_mini_label(time_change)
-	add_child(mini_label)
+	$Time_Tex.add_child(mini_label)
 	_fade_mini_label_out(mini_label)
 
 func _format_time(time_value):
