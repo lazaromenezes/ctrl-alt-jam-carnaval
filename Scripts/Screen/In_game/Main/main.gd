@@ -78,19 +78,18 @@ func selection_school(school: Control) -> void:
 	.set_delay(0.4)
 
 func pass_schools() -> void:
-	var school: Control = schools_node.get_child(next_school)
-	var tw = create_tween()
-	
-	enabled_school(school)
-	selection_school(school)
-	
-	tw.tween_property(school_panel,"position:x",-school.position.x+200,0.3).set_trans(Tween.TRANS_CUBIC)
-	next_school += 1
-	
-	if next_school > schools_node.get_child_count():
+	if next_school >= schools_node.get_child_count():
 		game_completed.emit()
-	
-	tw.tween_property(blur,"modulate:a",0,0.3).set_trans(Tween.TRANS_BOUNCE)
+	else:
+		var school: Control = schools_node.get_child(next_school)
+		var tw = create_tween()
+		enabled_school(school)
+		selection_school(school)
+		
+		tw.tween_property(school_panel,"position:x",-school.position.x+200,0.3).set_trans(Tween.TRANS_CUBIC)
+		next_school += 1
+		
+		tw.tween_property(blur,"modulate:a",0,0.3).set_trans(Tween.TRANS_BOUNCE)
 
 func _on_puzzle_solved(time_reward: float):
 	%MatchTimer.update(time_reward)
